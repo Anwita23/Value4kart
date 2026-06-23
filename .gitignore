@@ -39,3 +39,8 @@ package-lock.json
 /.cursor
 
 /public/public
+
+# Large files
+storage/updates/*.zip
+value4_kart_live.sql
+*.sql
