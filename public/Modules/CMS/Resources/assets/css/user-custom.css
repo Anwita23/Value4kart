@@ -1,0 +1,1338 @@
+/* ============================================================
+   Value4Kart — Blue Theme Override
+   Applies blue theme to everything EXCEPT top header & main header
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Override primary color variable site-wide
+   ---------------------------------------------------------- */
+:root {
+    --primary-color: #1a56db !important;
+    --semi-primary-color: #1a56db1a !important;
+    --hover-bg-color: #1e429f !important;
+    --hover-color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   2. Navigation bar (header-bottom) — full blue
+   ---------------------------------------------------------- */
+.header {
+    background-color: #1a56db !important;
+}
+
+.header .first-list,
+.header .header-menu-nav a,
+.header [style*="color"] {
+    color: #ffffff !important;
+}
+
+.header .active-border-bottom {
+    border-bottom-color: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.header .first-dropdown,
+.header .child-dropdown,
+.header .menu.dropdown-enable {
+    background-color: #ffffff !important;
+}
+
+.header .first-dropdown a,
+.header .child-dropdown a,
+.header .menu.dropdown-enable a {
+    color: #1a56db !important;
+}
+
+.header .first-dropdown li:hover,
+.header .child-dropdown li:hover {
+    background-color: #e8f0fe !important;
+}
+
+.header .group-category > div {
+    background-color: #1e429f !important;
+    color: #ffffff !important;
+}
+
+.header .group-category > div svg path {
+    fill: #ffffff !important;
+}
+
+.header .category-menu-wrapper {
+    background-color: #ffffff !important;
+}
+
+.header .categories-menu:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.header .test-click {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.header .test-click svg path,
+.header .test-click svg rect,
+.header .test-click svg circle {
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   3. Primary color utility classes
+   ---------------------------------------------------------- */
+.primary-bg-color {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.primary-bg-color * {
+    color: #ffffff !important;
+}
+
+.primary-bg-hover:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.primary-bg-hover:hover * {
+    color: #ffffff !important;
+}
+
+.primary-text-color {
+    color: #1a56db !important;
+}
+
+.primary-text-hover:hover {
+    color: #1a56db !important;
+}
+
+.primary-border-color {
+    border-color: #1a56db !important;
+}
+
+.primary-border-hover:hover {
+    border-color: #1a56db !important;
+}
+
+.semi-primary-bg-color {
+    background-color: #1a56db1a !important;
+}
+
+/* ----------------------------------------------------------
+   4. Product card badges — force white text on blue bg
+   ---------------------------------------------------------- */
+p.primary-bg-color,
+div.primary-bg-color,
+span.primary-bg-color,
+a.primary-bg-color,
+.primary-bg-color.z-20,
+.primary-bg-color.z-30 {
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   5. Product card icon buttons — white icon/text on hover
+   ---------------------------------------------------------- */
+.primary-bg-hover:hover svg path,
+.primary-bg-hover:hover svg rect,
+.primary-bg-hover:hover svg circle,
+.primary-bg-hover:hover svg polygon {
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+.primary-bg-hover:hover svg path[stroke] {
+    stroke: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   6. Buttons
+   ---------------------------------------------------------- */
+.btn-primary,
+button.btn-primary,
+.site-btn,
+.add-to-cart-btn,
+.buy-now-btn,
+[class*="primary-btn"],
+.checkout-btn {
+    background-color: #1a56db !important;
+    border-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover,
+.site-btn:hover,
+.add-to-cart-btn:hover {
+    background-color: #1e429f !important;
+    border-color: #1e429f !important;
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   7. Tabs & section headings
+   ---------------------------------------------------------- */
+.active-border {
+    border-bottom-color: #1a56db !important;
+}
+
+.c-tab-nav-marker {
+    background-color: #1a56db !important;
+}
+
+.active.dot {
+    background: #1a56db !important;
+}
+
+/* ----------------------------------------------------------
+   8. Sidebar category menu hover (left category panel)
+   ---------------------------------------------------------- */
+.categories-menu:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.category-hover:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   9. Slider arrows
+   ---------------------------------------------------------- */
+.prev:hover,
+.next:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   10. Dropdown hover items
+   ---------------------------------------------------------- */
+.dropdown .dropdown-menu li:hover {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+/* ----------------------------------------------------------
+   11. Footer & misc
+   ---------------------------------------------------------- */
+.cool-link:hover {
+    color: #1a56db !important;
+}
+
+.bg-reds-3 {
+    background-color: #dc2626 !important;
+}
+
+.footer-subscribe-btn,
+[class*="subscribe"] button {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+#sidenavCart .bg-primary,
+.cart-header-bg {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.pagination .active a,
+.pagination .active span,
+.page-item.active .page-link {
+    background-color: #1a56db !important;
+    border-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.search-border:focus-within {
+    border-color: #1a56db !important;
+    box-shadow: 0 0 0 2px #1a56db33 !important;
+}
+
+/* ----------------------------------------------------------
+   12. TOP CATEGORIES — alternating blue / yellow on hover
+       1st, 3rd, 5th... = blue  |  2nd, 4th, 6th... = yellow
+   ---------------------------------------------------------- */
+
+/* Reset primary-bg-hover inside category grid so nth-child rules win */
+.grid a .t-img.primary-bg-hover:hover {
+    background-color: transparent !important;
+}
+
+/* Odd cards → blue background */
+.grid a:nth-child(odd) .t-img.primary-bg-hover:hover {
+    background-color: #1a56db !important;
+}
+
+/* Even cards → yellow background */
+.grid a:nth-child(even) .t-img.primary-bg-hover:hover {
+    background-color: #FCCA19 !important;
+}
+
+/* Text/icon colour on odd (blue) hovered cards → white */
+.grid a:nth-child(odd) .t-img.primary-bg-hover:hover p,
+.grid a:nth-child(odd) .t-img.primary-bg-hover:hover span,
+.grid a:nth-child(odd) .t-img.primary-bg-hover:hover .text-gray-12 {
+    color: #ffffff !important;
+}
+
+/* Text/icon colour on even (yellow) hovered cards → dark */
+.grid a:nth-child(even) .t-img.primary-bg-hover:hover p,
+.grid a:nth-child(even) .t-img.primary-bg-hover:hover span,
+.grid a:nth-child(even) .t-img.primary-bg-hover:hover .text-gray-12 {
+    color: #1a1a1a !important;
+}
+
+/* Category name text at bottom of card (always visible, not in hover overlay) */
+.grid a .t-img p.text-gray-12 {
+    color: #2c2c2c !important;
+}
+
+/* ----------------------------------------------------------
+   13. Footer links — yellow (#FCCA19) on hover, not orange
+   ---------------------------------------------------------- */
+
+/* Override Tailwind hover:text-orange-500 with yellow */
+footer .hover\:text-orange-500:hover,
+section footer a:hover li,
+section footer a:hover span {
+    color: #FCCA19 !important;
+}
+
+/* Social icon circles in footer — keep their own bg, DON'T override */
+footer .social-transition.primary-bg-hover:hover {
+    background-color: #1a56db !important; /* keep blue for social icons */
+}
+
+/* ----------------------------------------------------------
+   14. Messages chat widget — white text, blue background
+   ---------------------------------------------------------- */
+
+/* Override the chat widget background variable */
+.chat-parent-container {
+    --chat-background: #1a56db !important;
+}
+
+/* The floating Messages toggle button */
+.chat-toggle-button {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+/* Messages text label */
+.chat-toggle-button span {
+    color: #ffffff !important;
+}
+
+/* Chat icon SVG inside the button — white */
+.chat-toggle-button .chat-message-icon path {
+    fill: #ffffff !important;
+}
+
+/* Chat panel header */
+.chat-view-header {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+
+.chat-view-header span,
+.chat-view-header .chat-message-icon path {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+.chat-view-close-button svg path {
+    fill: #ffffff !important;
+}
+
+/* ============================================================
+   BRANDS SECTION — Professional Blue/Yellow Gradient Cards
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Shared card base styles
+   ---------------------------------------------------------- */
+.flex.flex-col.md\:flex-row.mt-2.md\:mt-5.md\:gap-x-29p a.relative.h-36,
+.flex.flex-col.md\:flex-row.mt-2.md\:mt-5.md\:gap-x-29p a.relative.h-36.md\:h-80,
+.grid.grid-cols-2 a > div.border.rounded-md {
+    border: none !important;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+/* ----------------------------------------------------------
+   Large featured brand card (left, tall)
+   Blue → Yellow diagonal gradient
+   ---------------------------------------------------------- */
+a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md {
+    background: linear-gradient(135deg, #1a56db 0%, #2563eb 40%, #FCCA19 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.25) !important;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+/* Subtle decorative circle — top-right */
+a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(252, 202, 25, 0.18);
+    pointer-events: none;
+}
+
+/* Subtle decorative circle — bottom-left */
+a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    pointer-events: none;
+}
+
+a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 32px rgba(26, 86, 219, 0.35) !important;
+}
+
+/* ----------------------------------------------------------
+   Small brand grid cards — alternating gradient directions
+   ---------------------------------------------------------- */
+
+/* All small cards — shared base */
+.grid.grid-cols-2 a > div.border.rounded-md,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a > div.border.rounded-md {
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 12px rgba(26, 86, 219, 0.12) !important;
+    transition: transform 0.28s ease, box-shadow 0.28s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Odd small cards → blue-dominant gradient */
+.grid.grid-cols-2 a:nth-child(odd) > div.border.rounded-md,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a:nth-child(odd) > div.border.rounded-md {
+    background: linear-gradient(145deg, #e8f0fe 0%, #bfcfff 45%, #e8f7ff 100%) !important;
+}
+
+/* Even small cards → yellow-dominant gradient */
+.grid.grid-cols-2 a:nth-child(even) > div.border.rounded-md,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a:nth-child(even) > div.border.rounded-md {
+    background: linear-gradient(145deg, #fffbe6 0%, #fef3b4 45%, #fff8d6 100%) !important;
+}
+
+/* Hover lift on small cards */
+.grid.grid-cols-2 a:hover > div.border.rounded-md,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a:hover > div.border.rounded-md {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(26, 86, 219, 0.20) !important;
+}
+
+/* Decorative shimmer top-right on small cards */
+.grid.grid-cols-2 a > div.border.rounded-md::after,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a > div.border.rounded-md::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(26, 86, 219, 0.07);
+    pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   Brand images — ensure they pop on the gradient backgrounds
+   ---------------------------------------------------------- */
+a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md img {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15)) !important;
+    position: relative;
+    z-index: 1;
+}
+
+.grid.grid-cols-2 a > div.border.rounded-md img,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a > div.border.rounded-md img {
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.10)) !important;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.28s ease !important;
+}
+
+.grid.grid-cols-2 a:hover > div.border.rounded-md img,
+.grid.grid-cols-2.sm\:grid-cols-3.lg\:grid-cols-4 a:hover > div.border.rounded-md img {
+    transform: scale(1.06) !important;
+}
+
+/* ============================================================
+   NAV LAYOUT — Flipkart-style horizontal category bar below navbar
+   + Horizontal dropdown for nav menu items
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Navbar (.header) — blue bar, no overflow clipping
+   ---------------------------------------------------------- */
+.header {
+    position: relative !important;
+    z-index: 50 !important;
+    overflow: visible !important;
+}
+
+/* ----------------------------------------------------------
+   2. CATEGORY BAR — pure white bar BELOW the blue navbar
+      Flipkart style: icon on top, label below, blue underline on hover
+   ---------------------------------------------------------- */
+
+/* Hide the "≡ Categories" button — not needed in Flipkart style */
+.group-category > div:first-child {
+    display: none !important;
+}
+
+/* The group-category container — full width, white background */
+.group-category {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+}
+
+/* Override Tailwind's scale-0 (hidden by default) — always show */
+.category-menu-wrapper {
+    /* reset all transform/scale hiding */
+    transform: none !important;
+    --tw-scale-x: 1 !important;
+    --tw-scale-y: 1 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
+
+    /* layout */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08) !important;
+    z-index: 40 !important;
+    display: block !important;
+    overflow: visible !important;
+}
+
+/* Inner accordion wrapper → horizontal scroll container */
+.category-menu-wrapper .accordion-homepage-wrapper {
+    overflow: visible !important;
+}
+
+.category-menu-wrapper .accordion-homepage-wrapper .menu-full-details {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 8px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+.category-menu-wrapper .accordion-homepage-wrapper .menu-full-details::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Each category item — flex column, centered */
+.category-menu-wrapper li.category-list-decoration {
+    border: none !important;
+    border-bottom: none !important;
+    flex: 0 0 auto !important;
+    list-style: none !important;
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+/* The button wrapper */
+.category-menu-wrapper li.category-list-decoration > button {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* The primary-bg-hover div inside button */
+.category-menu-wrapper li .primary-bg-hover {
+    background: transparent !important;
+}
+
+/* The actual link row — make it a vertical column */
+.category-menu-wrapper .categories-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 96px !important;
+    height: 80px !important;
+    padding: 8px 4px 0 4px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border-bottom: 3px solid transparent !important;
+    transition: border-color 0.15s, color 0.15s !important;
+    gap: 4px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
+/* Icon container */
+.category-menu-wrapper .categories-menu > div.flex.justify-center.items-center {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+}
+
+.category-menu-wrapper .categories-menu .h-5.w-5 {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.category-menu-wrapper .categories-menu .h-5.w-5 img {
+    width: 36px !important;
+    height: 36px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Category name label */
+.category-menu-wrapper .categories-menu span.text-sm {
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    color: #333333 !important;
+    line-height: 1.2 !important;
+    padding: 0 !important;
+    max-width: 88px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: block !important;
+    margin-top: 4px !important;
+}
+
+/* Hover state — blue underline + blue text (Flipkart style) */
+.category-menu-wrapper .categories-menu:hover {
+    background: transparent !important;
+    border-bottom: 3px solid #1a56db !important;
+    color: #1a56db !important;
+    margin-left: 0 !important;
+}
+
+.category-menu-wrapper .categories-menu:hover span.text-sm {
+    color: #1a56db !important;
+}
+
+/* Hide the right-arrow chevron */
+.category-menu-wrapper .categories-menu .neg-transition-scale,
+.category-menu-wrapper .categories-menu > div.flex.items-center.justify-between > span:last-child {
+    display: none !important;
+}
+
+/* The justify-between div — switch to column for icon+label */
+.category-menu-wrapper .categories-menu .flex.items-center.justify-between {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+}
+
+/* Hide "See All Categories" button */
+.category-menu-wrapper .expand-button {
+    display: none !important;
+}
+
+/* ----------------------------------------------------------
+   3. Make the header layout: nav row on top, category bar below
+      by making the outer flex column
+   ---------------------------------------------------------- */
+.header > div.layout-wrapper.px-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+}
+
+/* Nav links row — normal height, horizontal padding */
+.header > div.layout-wrapper.px-4 > div.flex.justify-between {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 16px !important;
+    min-height: 56px !important;
+}
+
+/* Category bar — second row, full width white */
+.header > div.layout-wrapper.px-4 > div.group.group-category {
+    width: 100% !important;
+    background: #ffffff !important;
+    border-top: 1px solid #f0f0f0 !important;
+}
+
+/* xl:px-0 override */
+@media (min-width: 1280px) {
+    .header > div.layout-wrapper {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .header > div.layout-wrapper.px-4 > div.flex.justify-between {
+        padding: 0 0 !important;
+    }
+}
+
+/* ----------------------------------------------------------
+   4. Nav menu — horizontal dropdown (tiles side by side)
+   ---------------------------------------------------------- */
+ul.header-menu-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    list-style: none !important;
+    gap: 4px !important;
+}
+
+.header-menu-nav > li.first-dropdown-li {
+    position: relative !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown {
+    position: absolute !important;
+    top: calc(100% + 4px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) scaleY(0) !important;
+    transform-origin: top center !important;
+    transition: transform 0.18s ease, opacity 0.18s ease !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    min-width: 320px !important;
+    width: max-content !important;
+    max-width: 620px !important;
+
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14) !important;
+    padding: 10px 6px !important;
+    z-index: 1000 !important;
+    border: none !important;
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown {
+    transform: translateX(-50%) scaleY(1) !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li {
+    border: none !important;
+    flex: 0 0 auto !important;
+    min-width: 130px !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li .menuss-hover {
+    display: block !important;
+    color: #333333 !important;
+    padding: 8px 14px !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    transition: background 0.15s, color 0.15s !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover > button > div,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover .primary-bg-hover {
+    background-color: #1a56db !important;
+    border-radius: 6px !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover span {
+    color: #ffffff !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li .neg-transition-scale {
+    display: none !important;
+}
+
+/* ----------------------------------------------------------
+   5. Filter page sidebar — completely untouched
+   ---------------------------------------------------------- */
+
+/* ============================================================
+   FLIPKART CATEGORY BAR — with multi-level flyout submenus
+   ============================================================ */
+
+/* CRITICAL: allow flyout panels to overflow the sticky header */
+.header {
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+/* The sticky <section> wrapping the header also clips — fix it */
+.header,
+.header ~ *,
+section.sticky,
+.sticky {
+    overflow: visible !important;
+}
+
+/* Container strip */
+.flipkart-category-bar {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    position: relative;
+    z-index: 9990;
+    overflow: visible !important;
+}
+
+/* Scrollable inner row */
+.flipkart-cat-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 4px;
+}
+.flipkart-cat-inner::-webkit-scrollbar { display: none; }
+
+/* Each category wrapper — position context for flyout */
+.flipkart-cat-item-wrap {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+/* The visible icon+label tile */
+.flipkart-cat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    padding: 10px 4px 0 4px;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.15s ease;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.flipkart-cat-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+}
+.flipkart-cat-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.flipkart-cat-label {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #212121;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-bottom: 8px;
+    transition: color 0.18s ease, font-weight 0.18s ease;
+}
+
+/* ── Hover: only blue label, no underline, no background ── */
+.flipkart-cat-item-wrap:hover > .flipkart-cat-item {
+    border-bottom-color: transparent;
+}
+.flipkart-cat-item-wrap:hover > .flipkart-cat-item .flipkart-cat-icon {
+    border-radius: 4px;
+}
+.flipkart-cat-item-wrap:hover > .flipkart-cat-item .flipkart-cat-label {
+    color: #1a56db;
+    font-weight: 600;
+}
+
+/* ── Active (clicked): same rectangular faded blue gradient stays on ── */
+.flipkart-cat-item.fk-active {
+    border-bottom-color: #1a56db;
+}
+.flipkart-cat-item.fk-active .flipkart-cat-icon {
+    background: linear-gradient(to bottom, rgba(37, 99, 235, 0.35) 0%, rgba(96, 165, 250, 0.10) 70%, transparent 100%);
+    border-radius: 4px;
+}
+.flipkart-cat-item.fk-active .flipkart-cat-label {
+    color: #1a56db;
+    font-weight: 600;
+}
+}
+
+/* Active (clicked) category tile — persistent blue underline + label color */
+.flipkart-cat-item.fk-active {
+    border-bottom-color: #1a56db;
+}
+.flipkart-cat-item.fk-active .flipkart-cat-label {
+    color: #1a56db;
+    font-weight: 600;
+}
+
+/* ── Level-1 flyout (drops below the bar) ── */
+.fk-flyout-l1 {
+    display: none;
+    position: fixed;
+    min-width: 220px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+    border-top: 2px solid #1a56db;
+    z-index: 99999;
+    padding: 4px 0;
+}
+/* flyout visibility is controlled entirely by JS (fk-flyout.js) */
+
+/* ── Shared flyout row ── */
+.fk-flyout-row {
+    position: relative;
+}
+.fk-flyout-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #212121 !important;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.12s, color 0.12s;
+    gap: 8px;
+    background: transparent !important;
+}
+.fk-flyout-link span { flex: 1; }
+.fk-flyout-link svg { flex-shrink: 0; color: #878787; }
+
+.fk-flyout-row:hover > .fk-flyout-link {
+    background-color: #1a56db !important;
+    color: #ffffff !important;
+}
+.fk-flyout-row:hover > .fk-flyout-link span {
+    color: #ffffff !important;
+}
+.fk-flyout-row:hover > .fk-flyout-link svg path {
+    fill: #ffffff !important;
+}
+
+/* ── Level-2 flyout (right of L1) ── */
+.fk-flyout-l2 {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: 100%;
+    min-width: 210px;
+    background: #ffffff;
+    box-shadow: 4px 8px 24px rgba(0,0,0,0.12);
+    border-top: 2px solid #1a56db;
+    z-index: 100000;
+    padding: 4px 0;
+}
+.fk-flyout-row.has-children:hover > .fk-flyout-l2 {
+    display: block;
+}
+
+/* ── Level-3 flyout (right of L2) ── */
+.fk-flyout-l3 {
+    display: none;
+    position: absolute;
+    top: -4px;
+    left: 100%;
+    min-width: 200px;
+    background: #ffffff;
+    box-shadow: 4px 8px 24px rgba(0,0,0,0.10);
+    border-top: 2px solid #1a56db;
+    z-index: 100001;
+    padding: 4px 0;
+}
+.fk-flyout-row.has-children:hover > .fk-flyout-l3 {
+    display: block;
+}
+
+.fk-flyout-l1, .fk-flyout-l2, .fk-flyout-l3 {
+    pointer-events: all;
+}
+
+/* ============================================================
+   NAVBAR — white background
+   ============================================================ */
+.header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+/* Nav links text — dark on white */
+.header .first-list,
+.header .header-menu-nav a,
+.header #nav-wrap a {
+    color: #212121 !important;
+}
+
+/* Download Our App button on white navbar */
+.header .test-click {
+    background-color: #ffffff !important;
+    color: #212121 !important;
+}
+.header .test-click svg path,
+.header .test-click svg rect,
+.header .test-click svg circle {
+    stroke: #212121 !important;
+    fill: #212121 !important;
+}
+
+/* ============================================================
+   BANNER — one slide at a time, image fills its set height
+   ============================================================ */
+.slideshow-container {
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+/* The banner image: respect the CMS-configured height, fill without distortion */
+.hero-slide-img,
+.custom-swiper .hero-slide-img,
+.custom-swiper-full .hero-slide-img,
+.custom-swiper .other-slider-images,
+.custom-swiper-full .other-slider-images {
+    display: block !important;
+    width: 100% !important;
+    height: var(--slider-height, auto) !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+}
+
+/* Swiper container must clip overflow so inactive slides are hidden */
+.custom-swiper.swiper,
+.custom-swiper-full.swiper,
+.slider1.swiper {
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+/* Swiper wrapper height follows the active slide */
+.custom-swiper .swiper-wrapper,
+.custom-swiper-full .swiper-wrapper {
+    height: auto !important;
+}
+
+/* Each slide: clip its content so nothing bleeds into adjacent slides */
+.custom-swiper .swiper-slide,
+.custom-swiper-full .swiper-slide {
+    height: auto !important;
+    overflow: hidden !important;
+    /* For fade effect — non-active slides must be fully invisible */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.custom-swiper .swiper-slide.swiper-slide-active,
+.custom-swiper-full .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Prevent banner from sliding under the header */
+.layout-wrapper > .w-full.-mt-2 {
+    margin-top: 0 !important;
+}
+
+/* Download Our App dropdown — above the category bar */
+.test-drop {
+    z-index: 99999 !important;
+}
+
+/* ============================================================
+   NAV BAR — remove scrollbar + vertical dropdown with side submenus
+   ============================================================ */
+
+/* 1. Remove the scrollbar from the nav ul */
+ul.header-menu-nav.custom-border {
+    overflow: hidden !important;
+    white-space: normal !important;
+    flex-wrap: nowrap !important;
+}
+ul.header-menu-nav.custom-border::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+}
+#nav-wrap {
+    overflow: hidden !important;
+}
+#nav-wrap::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* 2. Nav first-level dropdown — vertical list, drops below nav item */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown {
+    position: absolute !important;
+    top: calc(100% + 2px) !important;
+    left: 0 !important;
+    transform: none !important;
+    transform-origin: top left !important;
+    transition: opacity 0.15s ease !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+
+    /* VERTICAL layout — like the contact page sidebar */
+    display: block !important;
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    min-width: 200px !important;
+    max-width: 220px !important;
+    width: 200px !important;
+
+    background: #ffffff !important;
+    border-radius: 0 0 6px 6px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14) !important;
+    border-top: 2px solid #1a56db !important;
+    padding: 4px 0 !important;
+    z-index: 9999 !important;
+}
+
+/* Show on hover */
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: none !important;
+}
+
+/* L1 dropdown items — full width rows */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li {
+    width: 100% !important;
+    min-width: unset !important;
+    flex: unset !important;
+    border-bottom: 1px solid #f5f5f5 !important;
+    position: relative !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li .menuss-hover {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #212121 !important;
+    padding: 10px 14px !important;
+    border-radius: 0 !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+}
+
+/* Show the right arrow chevron for items with children */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li .neg-transition-scale {
+    display: inline-block !important;
+}
+
+/* Hover row */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover > button > div,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover .primary-bg-hover {
+    background-color: #1a56db !important;
+    border-radius: 0 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover > a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover span {
+    color: #ffffff !important;
+}
+
+/* 3. L2 child dropdown — opens to the RIGHT of L1 item */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown {
+    display: none !important;
+    flex-direction: unset !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: 100% !important;
+    min-width: 190px !important;
+    width: 190px !important;
+    background: #ffffff !important;
+    box-shadow: 4px 8px 24px rgba(0,0,0,0.12) !important;
+    border-top: 2px solid #1a56db !important;
+    border-radius: 0 6px 6px 0 !important;
+    padding: 4px 0 !important;
+    z-index: 10000 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li:hover > ul.child-dropdown {
+    display: block !important;
+}
+
+/* L2 items */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li {
+    border-bottom: 1px solid #f5f5f5 !important;
+    position: relative !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li .menuss-hover {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    color: #212121 !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li:hover .primary-bg-hover,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li:hover > button > div {
+    background-color: #1a56db !important;
+    border-radius: 0 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li:hover a,
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li:hover span {
+    color: #ffffff !important;
+}
+
+/* L2 child dropdown (L3) — opens further right */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li > ul.child-dropdown {
+    display: none !important;
+    position: absolute !important;
+    top: -2px !important;
+    left: 100% !important;
+    min-width: 180px !important;
+    background: #ffffff !important;
+    box-shadow: 4px 8px 24px rgba(0,0,0,0.10) !important;
+    border-top: 2px solid #1a56db !important;
+    border-radius: 0 6px 6px 0 !important;
+    padding: 4px 0 !important;
+    z-index: 10001 !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li > ul.child-dropdown > li:hover > ul.child-dropdown {
+    display: block !important;
+}
+
+/* Override to make first-dropdown horizontal for Pages */
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    min-width: unset !important;
+    max-width: none !important;
+    width: max-content !important;
+    border-radius: 4px !important;
+    padding: 0 4px !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li {
+    width: auto !important;
+    min-width: unset !important;
+    flex: unset !important;
+    border-bottom: none !important;
+    border-right: 1px solid #dfdfdf !important;
+    position: relative !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li:last-child {
+    border-right: none !important;
+}
+
+/* RTL Support */
+html[dir="rtl"] .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li {
+    border-right: none !important;
+    border-left: 1px solid #dfdfdf !important;
+}
+
+html[dir="rtl"] .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li:last-child {
+    border-left: none !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li button {
+    width: auto !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li a {
+    width: auto !important;
+    display: block !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li .menuss-hover {
+    padding: 10px 20px !important;
+    width: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li .menuss-hover span {
+    width: auto !important;
+    white-space: nowrap !important;
+}
+
+.header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li .menuss-hover:hover {
+    margin: 0 !important;
+}
+
+/* Glassmorphism card */
+.glass-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* Center login page with gradient background */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a56db 0%, #2563eb 40%, #FCCA19 100%);
+    padding: 2rem;
+}

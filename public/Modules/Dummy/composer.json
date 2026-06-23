@@ -1,0 +1,21 @@
+{
+    "name": "techvillage/dummy",
+    "description": "",
+    "authors": [
+        {
+            "name": "Md. Al Mamun",
+            "email": "almamun.techvill@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Dummy\\": ""
+        }
+    }
+}

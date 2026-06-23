@@ -1,0 +1,554 @@
+/* ================================================================
+   Admin Login Page — Glassmorphism Design
+   Value4Kart | June 2026
+================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── Reset the outer auth-wrapper template constraints ─────────── */
+.auth-wrapper:has(.al-page),
+.auth-wrapper:has(.al-page) .auth-content,
+.auth-wrapper:has(.al-page) > div {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 100vh !important;
+    position: static !important;
+}
+.auth-wrapper:has(.al-page) .auth-bg { display: none !important; }
+.auth-wrapper:has(.al-page) .card,
+.auth-wrapper:has(.al-page) .card-body {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.auth-wrapper:has(.al-page) {
+    overflow: hidden !important;
+}
+
+/* ── Page body override ─────────────────────────────────────────── */
+body:has(.al-page) {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+}
+
+/* ── Main container ─────────────────────────────────────────────── */
+.al-page {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+
+    /* Deep rich gradient background */
+    background: linear-gradient(135deg,
+        #0f0c29 0%,
+        #302b63 40%,
+        #24243e 70%,
+        #0f0c29 100%);
+}
+
+/* ── Animated floating orbs (decorative) ───────────────────────── */
+.al-page::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(120, 80, 255, 0.35) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orbFloat1 12s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+.al-page::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 180, 255, 0.28) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orbFloat2 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes orbFloat1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(80px, 60px) scale(1.1); }
+    66%       { transform: translate(-40px, 100px) scale(0.95); }
+}
+@keyframes orbFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(-60px, -80px) scale(1.08); }
+    66%       { transform: translate(50px, -40px) scale(0.92); }
+}
+
+/* ── Extra mid orb ──────────────────────────────────────────────── */
+.al-orb-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 80, 180, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: orbFloat3 18s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+@keyframes orbFloat3 {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50%       { transform: translate(-50%, -55%) scale(1.15); }
+}
+
+/* ================================================================
+   LEFT PANEL — Gradient sidebar with illustration
+================================================================ */
+.al-left {
+    width: 42%;
+    height: calc(100vh - 4rem);
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 1;
+
+    /* Glassmorphism on left panel / 3D Book effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 40px;
+    box-shadow: 
+        30px 30px 80px rgba(0, 0, 0, 0.4),
+        inset 2px 2px 0px rgba(255, 255, 255, 0.2),
+        inset -1px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Glowing blob inside left panel */
+.al-left::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(120, 80, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+.al-left::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 200, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+.al-left__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.al-left__heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+    margin: 0 0 0.75rem 0;
+    text-shadow: 0 2px 20px rgba(120, 80, 255, 0.5);
+    letter-spacing: -0.02em;
+}
+
+.al-left__sub {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.al-left__illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.al-left__illustration img {
+    max-width: 100%;
+    width: 340px;
+    height: auto;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 16px 40px rgba(0, 180, 255, 0.35))
+            drop-shadow(0 4px 12px rgba(120, 80, 255, 0.4));
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-16px); }
+}
+
+/* ================================================================
+   RIGHT PANEL — Glassmorphism form card
+================================================================ */
+.al-right {
+    flex: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+/* The actual glass card */
+.al-right__form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    padding: 3rem 2.75rem;
+    margin: 0 auto;
+    position: relative;
+
+    /* ── Glassmorphism ── */
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border-radius: 24px;
+
+    /* ── White border lighting ── */
+    border: 2px solid rgba(255, 255, 255, 0.92);
+
+    /* ── Layered shadows: white outer glow + depth shadow ── */
+    box-shadow:
+        /* Outer white glow — bright halo around the card */
+        0 0 0 2px rgba(255, 255, 255, 0.18),
+        0 0 25px rgba(255, 255, 255, 0.35),
+        0 0 55px rgba(255, 255, 255, 0.18),
+        0 0 90px rgba(255, 255, 255, 0.08),
+        /* Depth / darkness */
+        0 24px 64px rgba(0, 0, 0, 0.55),
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        /* Inner top-left white highlight line — very bright */
+        inset 0 2px 0 rgba(255, 255, 255, 0.95),
+        inset 2px 0 0 rgba(255, 255, 255, 0.55),
+        /* Inner bottom-right subtle edge */
+        inset 0 -1px 0 rgba(255, 255, 255, 0.15),
+        inset -1px 0 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Top-left bright white corner light streak */
+.al-right__form-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.04) 30%,
+        transparent 60%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure form content sits above the ::before overlay */
+.al-right__form-wrap > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo — top of card */
+.al-right__logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.al-right__logo img {
+    max-height: 52px;
+    max-width: 160px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(120, 80, 255, 0.4));
+}
+
+/* Title */
+.al-right__title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 2rem 0;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 16px rgba(120, 80, 255, 0.5);
+}
+
+/* ── Form fields ────────────────────────────────────────────────── */
+.al-field {
+    margin-bottom: 1.25rem;
+}
+
+.al-label {
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 0.45rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.al-input {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 0.78rem 1.1rem;
+    font-size: 0.95rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.al-input:focus {
+    border-color: rgba(120, 80, 255, 0.7);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 0 0 3px rgba(120, 80, 255, 0.2),
+        0 0 20px rgba(120, 80, 255, 0.15);
+}
+.al-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* Input wrapper with icons */
+.al-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.al-input-icon {
+    position: absolute;
+    left: 1.1rem;
+    color: rgba(255, 255, 255, 0.45);
+    pointer-events: none;
+    transition: color 0.25s;
+    z-index: 2;
+}
+.al-input-wrap:focus-within .al-input-icon {
+    color: rgba(255, 255, 255, 0.9);
+}
+/* Icon darkens when input has content */
+.al-input-icon.dark {
+    color: rgba(0, 0, 0, 1);
+}
+.al-input-wrap .al-input {
+    padding-left: 2.8rem;
+    padding-right: 2.8rem; /* Leaves room for the password toggle if present */
+}
+.al-eye-btn {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 1);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+.al-eye-btn:hover { color: rgba(0, 0, 0, 1); }
+
+/* ── Remember + Forgot row ──────────────────────────────────────── */
+.al-row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.al-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}
+.al-remember input[type="checkbox"] {
+    accent-color: #7b52d0;
+    width: 15px;
+    height: 15px;
+}
+.al-forgot {
+    font-size: 0.85rem;
+    color: rgba(160, 120, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+.al-forgot:hover {
+    color: #c4a0ff;
+    text-shadow: 0 0 10px rgba(160, 120, 255, 0.5);
+}
+
+/* ── Submit button ──────────────────────────────────────────────── */
+.al-btn {
+    width: 100%;
+    padding: 0.88rem 1rem;
+    background: linear-gradient(135deg, #7b52d0 0%, #4776e6 50%, #56ccf2 100%);
+    background-size: 200% 200%;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-position 0.4s ease, transform 0.15s, box-shadow 0.3s;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow:
+        0 4px 20px rgba(120, 80, 255, 0.5),
+        0 2px 6px rgba(0, 0, 0, 0.3);
+    animation: btnShimmer 4s ease-in-out infinite;
+    text-align: center;
+}
+/* Ensure the text stays perfectly centered even if there is a loader next to it */
+.al-btn .btn-text {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+/* Position the loader absolutely so it doesn't push the text off-center */
+.al-btn .anim.spin {
+    position: absolute;
+    right: 1.5rem;
+}
+.al-btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 32px rgba(120, 80, 255, 0.65),
+        0 4px 12px rgba(0, 0, 0, 0.3);
+    background-position: right center;
+}
+.al-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(120, 80, 255, 0.4);
+}
+
+@keyframes btnShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
+}
+
+/* ── Footer text ────────────────────────────────────────────────── */
+.al-footer-text {
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 1.5rem;
+}
+.al-footer-text a {
+    color: rgba(160, 120, 255, 0.9);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.al-footer-text a:hover {
+    color: #c4a0ff;
+    text-decoration: underline;
+}
+
+/* ── Notification / alert area ──────────────────────────────────── */
+.al-notifications .alert {
+    border-radius: 10px;
+    font-size: 0.88rem;
+    padding: 0.65rem 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+}
+.al-notifications .alert-danger {
+    background: rgba(255, 60, 80, 0.15);
+    border-color: rgba(255, 60, 80, 0.35);
+    color: #ffb3bb;
+}
+.al-notifications .alert-success {
+    background: rgba(40, 220, 140, 0.12);
+    border-color: rgba(40, 220, 140, 0.3);
+    color: #9affd3;
+}
+
+/* ── Divider line ────────────────────────────────────────────────── */
+.al-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.8rem;
+}
+.al-divider::before,
+.al-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .al-left { display: none; }
+    .al-right {
+        padding: 1.5rem 1rem;
+        justify-content: center;
+    }
+    .al-right__form-wrap { padding: 2.5rem 2rem; }
+}
+@media (max-width: 480px) {
+    .al-right__form-wrap {
+        padding: 2rem 1.5rem;
+        border-radius: 18px;
+    }
+    .al-right__title { font-size: 1.5rem; }
+}

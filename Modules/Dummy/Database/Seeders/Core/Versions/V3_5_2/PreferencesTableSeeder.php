@@ -1,0 +1,27 @@
+<?php
+
+namespace Modules\Dummy\Database\Seeders\Core\Versions\V3_5_2;
+
+use App\Models\Preference;
+use Illuminate\Database\Seeder;
+
+class PreferencesTableSeeder extends Seeder
+{
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Preference::updateOrInsert(
+            [
+                'category' => 'preference',
+                'field' => 'db_version',
+            ],
+            [
+                'value' => '3.5.2',
+            ]
+        );
+    }
+}

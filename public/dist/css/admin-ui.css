@@ -1,0 +1,572 @@
+/**
+ * Admin UI – shared design system (menu builder / category vibe)
+ * One place to change buttons and delete modal across admin.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --admin-primary: #3C4043;
+  --admin-primary-hover: #202124;
+  --admin-cancel-hover: #F1F3F4;
+  --admin-danger: #C5221F;
+  --admin-danger-bg: #D93025;
+  --admin-danger-hover: #C5221F;
+  --admin-border: #E0E0E0;
+  --admin-border-input: #DADCE0;
+  --admin-cancel-border: #C4C7CC;
+  --admin-cancel-border-hover: #9AA0A6;
+  --admin-text: #202124;
+  --admin-text-muted: #5F6368;
+  --admin-focus: #1A73E8;
+  --admin-radius: 4px;
+}
+
+/* Base button */
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--admin-radius);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.admin-btn-sm {
+  padding: 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  min-height: 0;
+  line-height: 1.35;
+  gap: 6px;
+}
+
+.admin-btn-sm .feather {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
+}
+
+.admin-btn:focus {
+  outline: none;
+}
+
+.admin-btn:focus-visible {
+  outline: 1px solid var(--admin-primary-hover);
+  outline-offset: 1px;
+}
+
+/* Primary – Save, Create, etc. */
+.admin-btn-primary {
+  background: var(--admin-primary);
+  color: #fff;
+}
+
+.admin-btn-primary:hover {
+  background: var(--admin-primary-hover);
+  color: #fff;
+}
+
+/* Cancel – outlined (border) */
+.admin-btn-cancel {
+  background: #fff;
+  color: var(--admin-text);
+  border: 1px solid var(--admin-cancel-border);
+  box-shadow: none;
+}
+
+.admin-btn-cancel:hover {
+  background: var(--admin-cancel-hover);
+  color: var(--admin-text);
+  border-color: var(--admin-cancel-border-hover);
+}
+
+/* Danger – Delete confirm in modal */
+.admin-btn-danger,
+.admin-btn-danger-confirm {
+  background: var(--admin-danger-bg);
+  color: #fff;
+}
+
+.admin-btn-danger:hover,
+.admin-btn-danger-confirm:hover {
+  background: var(--admin-danger-hover);
+  color: #fff;
+}
+
+.admin-btn:disabled,
+.admin-btn[disabled] {
+  cursor: not-allowed;
+}
+
+.admin-btn-primary:disabled,
+.admin-btn-primary[disabled] {
+  background: #e0e0e0 !important;
+  color: #9e9e9e !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Danger / delete: disabled must read as “off”, not faint red */
+.admin-btn-danger:disabled,
+.admin-btn-danger[disabled],
+button.admin-btn.admin-btn-danger:disabled {
+  background: #bdbdbd !important;
+  color: #424242 !important;
+  border: 1px solid #9e9e9e !important;
+  cursor: not-allowed;
+  opacity: 1 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.admin-btn-danger:disabled .feather,
+.admin-btn-danger[disabled] .feather,
+.admin-btn-danger:disabled span,
+.admin-btn-danger[disabled] span {
+  color: inherit;
+  opacity: 1;
+}
+
+.admin-btn-danger:disabled:hover,
+.admin-btn-danger[disabled]:hover {
+  background: #bdbdbd !important;
+  color: #424242 !important;
+  border-color: #9e9e9e !important;
+}
+
+/* Icon-only buttons (edit, delete in tables) */
+.admin-btn-icon {
+  padding: 8px;
+  min-width: 36px;
+  min-height: 36px;
+  color: var(--admin-text-muted);
+  background: transparent;
+}
+
+.admin-btn-icon:hover {
+  color: var(--admin-primary-hover);
+  background: var(--admin-cancel-hover);
+}
+
+.admin-btn-icon .fa,
+.admin-btn-icon .feather {
+  font-size: 14px;
+}
+
+/* Delete icon – danger on hover */
+.admin-btn-icon-danger:hover {
+  color: var(--admin-danger);
+  background: rgba(197, 34, 31, 0.08);
+}
+
+/* Delete modal – premium destructive dialog (Stripe / Linear style) */
+.admin-delete-modal-dialog {
+  max-width: 440px;
+  margin: 1.75rem auto;
+}
+
+.admin-delete-modal .modal-dialog {
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.16s ease-out;
+  transform: scale(0.97);
+  opacity: 0;
+}
+
+body.admin-delete-modal-open .modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.42) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.admin-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    font-family: var(--admin-btn-font);
+  }
+
+.admin-delete-modal.show .modal-dialog {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.admin-delete-modal-content {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* —— v2 layout —— */
+.admin-delete-modal-header-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #E8EAED;
+  background: #fff;
+}
+
+.admin-delete-modal-title-v2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--admin-text);
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-delete-modal-close-v2 {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--admin-text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+
+.admin-delete-modal-close-v2:hover {
+  background: #F1F3F4;
+  color: var(--admin-text);
+}
+
+.admin-delete-modal-close-v2:focus-visible {
+  outline: 2px solid var(--admin-focus);
+  outline-offset: 2px;
+}
+
+.admin-delete-modal-body-v2 {
+  padding: 28px 32px 24px;
+  text-align: center;
+  background: #fff;
+}
+
+.admin-delete-modal-icon-v2 {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FEF2F2;
+  color: #DC2626;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.16s ease;
+}
+
+.admin-delete-modal.show .admin-delete-modal-icon-v2 {
+  transform: scale(1);
+}
+
+.admin-delete-modal-icon-v2 .feather {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.admin-delete-modal-primary-v2 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--admin-text);
+  margin: 0 auto 10px;
+  line-height: 1.5;
+  max-width: 340px;
+}
+
+.admin-delete-modal-secondary-v2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--admin-text-muted);
+  margin: 0 auto;
+  line-height: 1.55;
+  max-width: 340px;
+}
+
+.admin-delete-modal-footer-v2 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 20px 24px 24px;
+  border-top: 1px solid #E8EAED;
+  background: #FAFBFC;
+}
+
+.admin-delete-modal-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.admin-delete-modal-footer-loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+}
+
+.admin-delete-modal-footer-loading .ajax-loading:empty {
+  display: none;
+}
+
+.admin-delete-modal-btn-ghost.admin-btn-cancel,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-ghost {
+  font-weight: 500;
+  padding: 10px 18px !important;
+  min-height: 42px;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: var(--admin-text) !important;
+  border: 1px solid var(--admin-cancel-border) !important;
+  box-shadow: none !important;
+  transition: background 0.14s ease, border-color 0.14s ease !important;
+}
+
+.admin-delete-modal-btn-ghost.admin-btn-cancel:hover,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-ghost:hover {
+  background: var(--admin-cancel-hover) !important;
+  border-color: var(--admin-cancel-border-hover) !important;
+}
+
+.admin-delete-modal-btn-danger,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-danger {
+  min-height: 42px;
+  min-width: 120px;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  gap: 8px !important;
+  transition: background 0.14s ease, transform 0.12s ease, box-shadow 0.14s ease !important;
+}
+
+.admin-delete-modal-btn-danger:hover:not(:disabled),
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-danger:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(217, 48, 37, 0.28);
+}
+
+.admin-delete-modal-btn-danger:disabled,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-danger:disabled {
+  background: #bdbdbd !important;
+  color: #424242 !important;
+  border: 1px solid #9e9e9e !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.admin-delete-modal-btn-danger:disabled .feather,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-danger:disabled .feather,
+.admin-delete-modal-btn-danger:disabled span,
+.admin-delete-modal-footer-v2 .admin-delete-modal-btn-danger:disabled span {
+  color: inherit;
+}
+
+.admin-delete-modal-confirm-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: var(--admin-danger-bg) !important;
+  color: #fff !important;
+  font-weight: 500;
+  flex-shrink: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.admin-delete-modal-confirm-btn:hover {
+  background: var(--admin-danger-hover) !important;
+  color: #fff !important;
+}
+
+.admin-delete-modal-confirm-btn.disabled-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-delete-confirm-progress {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Loading: hide all label text (incl. plain text if .text() stripped markup); spinner on top */
+.admin-delete-modal-confirm-btn.is-loading {
+  pointer-events: none;
+  position: relative;
+  justify-content: center !important;
+  color: transparent !important;
+}
+
+.admin-delete-modal-confirm-btn.is-loading .feather,
+.admin-delete-modal-confirm-btn.is-loading span,
+.admin-delete-modal-confirm-btn.is-loading svg {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.admin-delete-modal-confirm-btn.is-loading::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  margin: -9px 0 0 -9px;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: admin-delete-spin 0.6s linear infinite;
+}
+
+@keyframes admin-delete-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Unified button system – same color, border, hover, padding everywhere
+   Overrides legacy classes so all buttons match the design system.
+   ========================================================================== */
+
+/* Legacy submit/save/primary – match admin-btn-primary */
+.custom-btn-submit,
+button.custom-btn-submit,
+.btn.custom-btn-submit,
+.btn.form-submit.custom-btn-submit,
+a.custom-btn-submit {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: var(--admin-radius) !important;
+  border: none !important;
+  background: var(--admin-primary) !important;
+  color: #fff !important;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.custom-btn-submit:hover:enabled,
+button.custom-btn-submit:hover:enabled,
+.btn.custom-btn-submit:hover:not(:disabled) {
+  background: var(--admin-primary-hover) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.custom-btn-submit:disabled,
+button.custom-btn-submit:disabled {
+  background: #E0E0E0 !important;
+  color: #9E9E9E !important;
+  cursor: not-allowed;
+}
+
+/* Legacy cancel – match admin-btn-cancel (bordered) */
+.custom-btn-cancel,
+a.custom-btn-cancel,
+.btn.custom-btn-cancel,
+button.custom-btn-cancel {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: var(--admin-radius) !important;
+  border: 1px solid var(--admin-cancel-border) !important;
+  background: #fff !important;
+  color: var(--admin-text) !important;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  box-shadow: none !important;
+}
+
+.custom-btn-cancel:hover,
+a.custom-btn-cancel:hover,
+.btn.custom-btn-cancel:hover:not(:disabled) {
+  background: var(--admin-cancel-hover) !important;
+  color: var(--admin-text) !important;
+  border-color: var(--admin-cancel-border-hover) !important;
+}
+
+.custom-btn-cancel:disabled {
+  background: transparent !important;
+  color: #9E9E9E !important;
+  cursor: not-allowed;
+}
+
+/* Standard .btn-primary in panels – match primary */
+.main-body .btn-primary,
+.main-body .btn.btn-primary,
+.page-wrapper .btn-primary {
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  border-radius: var(--admin-radius) !important;
+  border: none !important;
+  background: var(--admin-primary) !important;
+  color: #fff !important;
+}
+
+.main-body .btn-primary:hover,
+.main-body .btn.btn-primary:hover:not(:disabled),
+.page-wrapper .btn-primary:hover:not(:disabled) {
+  background: var(--admin-primary-hover) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Small variant – keep min height consistent */
+.custom-btn-small.btn-primary,
+.btn.custom-btn-small.custom-btn-submit {
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+}
+
+/* Datatable filter toggle: stay btn-sm size when active (global .btn-primary rule was stretching it) */
+.main-body .filterbtn.btn-primary,
+.page-wrapper .filterbtn.btn-primary,
+.main-body button.filterbtn.btn-primary,
+.page-wrapper button.filterbtn.btn-primary {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  min-height: calc(1.5em + 0.5rem + 2px);
+  box-sizing: border-box;
+}

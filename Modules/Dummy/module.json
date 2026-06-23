@@ -1,0 +1,16 @@
+{
+    "name": "Dummy",
+    "alias": "dummy",
+    "display_name": "One Click Demo Import",
+    "description": "Effortlessly populate your database for testing and development with our intuitive dummy data import feature. Streamline your workflow and simulate real scenarios in just a few clicks.",
+    "version": "5.2.0",
+    "martvill_version": "5.2.0",
+    "keywords": [],
+    "priority": 63,
+    "providers": ["Modules\\Dummy\\Providers\\DummyServiceProvider"],
+    "aliases": {},
+    "files": [],
+    "requires": [],
+    "translationSkipped": true,
+    "homePageViewSkipped": true
+}
