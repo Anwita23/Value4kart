@@ -83,9 +83,112 @@
             <div class="ltr:ml-auto rtl:ml-0">
                 <div class="flex items-end rev {{ isset($header['main']['show_searchbar']) && $header['main']['show_searchbar'] == 1 ? 'justify-end' : 'ml-2' }}">
                     <ul class="flex -mt-1.5 ltr:relative">
-                        @if (isset($header['main']['show_account']) && $header['main']['show_account'] == 1)
-                            <li class="hidden">{{-- Account icon hidden --}}</li>
-                        @endif
+                        {{-- Account Icon: beside wishlist --}}
+                        <li class="hidden md:block ml-5">
+                            <div class="flex flex-col justify-center items-center">
+                                @auth
+                                    {{-- Logged-in: avatar + dropdown --}}
+                                    <div class="relative" x-data="{ accountOpen: false }" x-cloak>
+                                        <button @click="accountOpen = !accountOpen"
+                                                @click.outside="accountOpen = false"
+                                                class="flex flex-col items-center focus:outline-none group"
+                                                id="header-account-btn">
+                                            <div class="relative">
+                                                <img class="h-7 w-7 rounded-full object-cover ring-2 ring-transparent group-hover:ring-gray-300 transition-all duration-200"
+                                                     src="{{ Auth::user()->fileUrlQuery() }}"
+                                                     alt="{{ __('Avatar') }}">
+                                            </div>
+                                            <p style="color: {{ $header['main']['text_color'] }}"
+                                               class="text-xs text-xss font-medium roboto-medium leading-3 text-center mt-11p">
+                                                {{ __('Account') }}
+                                            </p>
+                                        </button>
+
+                                        {{-- Dropdown --}}
+                                        <div x-show="accountOpen"
+                                             x-transition:enter="transition ease-out duration-150"
+                                             x-transition:enter-start="opacity-0 scale-95"
+                                             x-transition:enter-end="opacity-100 scale-100"
+                                             x-transition:leave="transition ease-in duration-100"
+                                             x-transition:leave-start="opacity-100 scale-100"
+                                             x-transition:leave-end="opacity-0 scale-95"
+                                             class="absolute ltr:right-0 rtl:left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl z-50 py-1 origin-top-right"
+                                             style="display: none;">
+                                            {{-- User info --}}
+                                            <div class="px-4 py-3 border-b border-gray-100">
+                                                <p class="text-sm font-semibold text-gray-800 truncate dm-sans">{{ Auth::user()->name }}</p>
+                                                <p class="text-xs text-gray-500 truncate roboto-medium">{{ Auth::user()->email }}</p>
+                                            </div>
+                                            <ul class="py-1">
+                                                @if (isset($header['main']['show_account']) && $header['main']['show_account'] == 1)
+                                                    <li>
+                                                        <a href="{{ route('site.dashboard') }}"
+                                                           class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150">
+                                                            <svg class="w-4 h-4 ltr:mr-2.5 rtl:ml-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                                            </svg>
+                                                            {{ __('My Account') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                                @if ($userRole->type == 'admin')
+                                                    <li>
+                                                        <a href="{{ route('dashboard') }}" target="_blank"
+                                                           class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150">
+                                                            <svg class="w-4 h-4 ltr:mr-2.5 rtl:ml-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                                            </svg>
+                                                            {{ __('Admin Panel') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                                @if ($userRole->type == 'admin' || ($userRole->type == 'vendor' && optional(auth()->user()->vendors()->first())->status == 'Active'))
+                                                    <li>
+                                                        <a href="{{ route('vendor-dashboard') }}" target="_blank"
+                                                           class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-150">
+                                                            <svg class="w-4 h-4 ltr:mr-2.5 rtl:ml-2.5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                            </svg>
+                                                            {{ __('Vendor Panel') }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                                <li class="border-t border-gray-100 mt-1 pt-1">
+                                                    <a href="{{ route('site.logout') }}"
+                                                       class="flex items-center px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-150">
+                                                        <svg class="w-4 h-4 ltr:mr-2.5 rtl:ml-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                                                        </svg>
+                                                        {{ __('Logout') }}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @else
+                                    {{-- Guest: person icon → opens login modal --}}
+                                    <button type="button"
+                                            class="open-login-modal flex flex-col items-center focus:outline-none group"
+                                            id="header-account-guest-btn"
+                                            aria-label="{{ __('Sign In') }}">
+                                        <svg width="22" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                             class="group-hover:opacity-70 transition-opacity duration-150">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M10.4102 2.38517C8.43424 2.38517 6.83243 3.98698 6.83243 5.96291C6.83243 7.93885 8.43424 9.54066 10.4102 9.54066C12.3861 9.54066 13.9879 7.93885 13.9879 5.96291C13.9879 3.98698 12.3861 2.38517 10.4102 2.38517ZM4.44727 5.96291C4.44727 2.66969 7.11695 0 10.4102 0C13.7034 0 16.3731 2.66969 16.3731 5.96291C16.3731 9.25614 13.7034 11.9258 10.4102 11.9258C7.11695 11.9258 4.44727 9.25614 4.44727 5.96291Z"
+                                                  fill="{{ $header['main']['text_color'] }}"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                  d="M4.00564 15.9486C5.86929 14.8761 8.11934 14.311 10.4085 14.311C12.6976 14.311 14.9477 14.8761 16.8113 15.9486C18.6743 17.0207 20.0908 18.5688 20.7471 20.4058C20.9687 21.0261 20.6455 21.7085 20.0253 21.9301C19.405 22.1517 18.7226 21.8286 18.501 21.2083C18.0701 20.0024 17.0911 18.8615 15.6216 18.0159C14.1528 17.1706 12.3198 16.6961 10.4085 16.6961C8.49717 16.6961 6.66414 17.1706 5.19535 18.0159C3.72586 18.8615 2.74681 20.0024 2.31597 21.2083C2.09437 21.8286 1.41193 22.1517 0.791676 21.9301C0.171426 21.7085 -0.151748 21.0261 0.0698463 20.4058C0.726164 18.5688 2.14268 17.0207 4.00564 15.9486Z"
+                                                  fill="{{ $header['main']['text_color'] }}"/>
+                                        </svg>
+                                        <p style="color: {{ $header['main']['text_color'] }}"
+                                           class="text-xs text-xss font-medium roboto-medium leading-3 text-center mt-11p">
+                                            {{ __('Account') }}
+                                        </p>
+                                    </button>
+                                @endauth
+                            </div>
+                        </li>
                         
                         @if (isset($header['main']['show_wishlist']) && $header['main']['show_wishlist'] == 1)
                             <li class="hidden md:block ml-5">
