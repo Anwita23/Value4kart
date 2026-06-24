@@ -265,28 +265,22 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <img class="hero-slide-img md:rounded-lg object-contain w-full" src="{{ $slide->fileUrlQuery() }}">
+                                        <img class="hero-slide-img md:rounded-lg object-cover w-full" style="height: 500px;" src="{{ $slide->fileUrlQuery() }}">
                                     </div>
                                 </div>
                                 @endforeach
-                                <a class="md:flex hidden">
-                                    <span class="prev swiper-button-prev items-center justify-center p-2">
-                                        <svg class="neg-transition-scale" width="9" height="11" viewBox="0 0 9 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32668 0.337159L8.66402 1.65614L3.65882 6.59262L8.66402 11.5291L7.32667 12.8481L0.98413 6.59262L7.32668 0.337159Z" fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                <a class="md:flex hidden">
-                                    <span class="next swiper-button-next items-center justify-center p-2">
-                                        <svg class="neg-transition-scale" width="9" height="11" viewBox="0 0 9 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3231 0.337159L0.985761 1.65614L5.99096 6.59262L0.985762 11.5291L2.32311 12.8481L8.66565 6.59262L2.3231 0.337159Z" fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                </a>
-                                @foreach ($slides as $slide)
-                                    <div class="swiper-pagination"></div>
-                                @endforeach
                             </div>
+                            <span class="prev swiper-button-prev md:flex hidden items-center justify-center p-2">
+                                <svg class="neg-transition-scale" width="9" height="11" viewBox="0 0 9 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32668 0.337159L8.66402 1.65614L3.65882 6.59262L8.66402 11.5291L7.32667 12.8481L0.98413 6.59262L7.32668 0.337159Z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <span class="next swiper-button-next md:flex hidden items-center justify-center p-2">
+                                <svg class="neg-transition-scale" width="9" height="11" viewBox="0 0 9 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.3231 0.337159L0.985761 1.65614L5.99096 6.59262L0.985762 11.5291L2.32311 12.8481L8.66565 6.59262L2.3231 0.337159Z" fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <div class="swiper-pagination" style="bottom: 25px; position: absolute; z-index: 99;"></div>
                         </div>
                     </div>
                 </div>
