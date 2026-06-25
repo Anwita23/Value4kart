@@ -2,12 +2,12 @@
     $slider = $component->slider ?? [];
 @endphp
 @if (count($slider) > 0)
-    <div class="md:w-[335px] lg:w-322p w-full pb-2 sidebar_slider">
+    <div class="md:w-[335px] lg:w-322p w-full pb-2 sidebar_slider md:flex md:flex-col md:h-full">
         @foreach ($slider as $slide)
             @php
                 $slide = miniCollection($slide);
             @endphp
-            <div class="relative h-600p w-full builder_slider fade">
+            <div class="relative h-[300px] md:h-full w-full builder_slider fade md:flex-grow">
                 @isset($slide->image)
                     <img class="w-full h-full object-cover rounded-md"
                         src="{{ Storage::disk()->url('public/uploads') . DIRECTORY_SEPARATOR . $slide->image }}">
