@@ -2,7 +2,7 @@
     $carts = \App\Cart\Cart::cartCollection()->sortKeys();
     $userRole = auth()->user()?->role();
 @endphp
-<section style="background: {{ $header['main']['bg_color'] }}" class="sticky top-0 z-40 md:bg-white bg-gray-12 max-h-24">
+<section style="background: {{ $header['main']['bg_color'] }}; z-index: 999;" class="sticky top-0 z-50 md:bg-white bg-gray-12 max-h-24">
     <div class="{{ isset($header['main']) && in_array(1, $header['main']) ? 'py-4' : '' }}">
         <div class="layout-wrapper px-4 xl:px-0 flex justify-between">
             @if (isset($header['main']['show_logo']) && $header['main']['show_logo'] == 1 && $headerLogo->objectFile)
@@ -128,7 +128,7 @@
                                                 id="header-account-btn">
                                             <div slot="icon" class="relative">
                                                 <div class="flex justify-center">
-                                                    <img class="h-[22px] w-[22px] mt-0.5 rounded-full object-cover"
+                                                    <img class="mt-0.5 rounded-full object-cover" style="height: 22px; width: 22px;"
                                                          src="{{ Auth::user()->fileUrlQuery() }}"
                                                          alt="{{ __('Avatar') }}">
                                                 </div>
@@ -147,8 +147,8 @@
                                              x-transition:leave="transition ease-in duration-100"
                                              x-transition:leave-start="opacity-100 scale-100"
                                              x-transition:leave-end="opacity-0 scale-95"
-                                             class="absolute ltr:right-0 rtl:left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl z-50 py-1 origin-top-right"
-                                             style="display: none;">
+                                             class="absolute ltr:right-0 rtl:left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 origin-top-right"
+                                             style="display: none; z-index: 9999;">
                                             {{-- User info --}}
                                             <div class="px-4 py-3 border-b border-gray-100">
                                                 <p class="text-sm font-semibold text-gray-800 truncate dm-sans">{{ Auth::user()->name }}</p>

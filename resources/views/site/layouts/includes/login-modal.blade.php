@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 
 <!--Overlay Effect-->
-<div class="fixed hidden items-center inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto z-50" id="my-modal">
+<div class="fixed hidden items-center inset-0 bg-gray-900 bg-opacity-60 backdrop-blur-sm overflow-y-auto z-50 transition-opacity duration-300" id="my-modal">
     <!--modal content-->
-    <div class="relative mx-5 md:mt-40 xl:mt-20 sm:mx-auto px-15p pb-5 md:py-8 md:px-31p md:pt-2 pt-0.5 border w-508px rounded-lg bg-white modal-h"
+    <div class="relative mx-5 md:mt-40 xl:mt-20 sm:mx-auto px-15p pb-5 md:py-8 md:px-10 md:pt-4 pt-0.5 w-508px rounded-2xl bg-white shadow-2xl modal-h transform transition-all duration-300"
         id="modal-main">
         <div id="tabs" class="c-tabs mt-4">
 
@@ -40,7 +40,7 @@
                             <div class="login-email-section">
                                 <div class="md:mb-10 mb-6 relative">
                                     <input
-                                        class="w-full border border-gray-2 rounded ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 text-13 md:text-15 md:h-52p"
                                         type="email" name="email"
                                         placeholder="{{ __('Email Address') }}"
                                         data-type-mismatch="{{ __('Enter a valid :x.', ['x' => strtolower(__('Email'))]) }}">
@@ -65,7 +65,7 @@
                             <div class="login-phone-section">
                                 <div class="md:mb-10 mb-6 relative">
                                     <input
-                                        class="cc-phone w-full border border-gray-2 rounded ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="cc-phone w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 text-13 md:text-15 md:h-52p"
                                         type="text" name="phone">
                                     @if (preference('user_login', 'both') == 'both')
                                         <span class="enable-login-email-section cursor-pointer float-right roboto-medium font-medium text-gray-10 hover:text-gray-12 text-11 md:text-sm mt-1">{{ __('Use Email Instead') }}</span>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="mb-2 md:mb-3 relative password-container">
                                 <input
-                                    class="password-field w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                    class="password-field w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 text-13 md:text-15 md:h-52p"
                                     type="password" name="password" id="login-password"
                                     placeholder="{{ __('Password') }}" required
                                     oninvalid="this.setCustomValidity('{{ __('This field is required.') }}')">
@@ -149,10 +149,10 @@
                                     <span class="text-red-500 text-xs md:text-sm login-captcha-error-message"></span>
                                 </div>
                             @endif
-                            <div class="mb-4 md:mt-5 mt-3">
+                            <div class="mb-4 md:mt-6 mt-4">
                                 <button id="signin-user"
-                                    class="bg-gray-12 text-white text-sm md:text-lg leading-6 dm-sans text-center w-full p-2 py-2 md:py-3 rounded transition ease-in-out duration-200 primary-bg-hover hover:text-gray-12 h-10 md:h-52p">
-                                    <span class="signin-text"> {{ strtoupper(__('Sign In')) }}</span>
+                                    class="bg-gray-12 text-white text-sm md:text-lg leading-6 dm-sans text-center w-full p-2 py-2 md:py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 primary-bg-hover hover:text-gray-12 h-10 md:h-52p">
+                                    <span class="signin-text font-semibold tracking-wide"> {{ strtoupper(__('Sign In')) }}</span>
                                     <div class="hidden login-modal-loader">
                                         <svg class="h-4 w-4 md:h-6 md:w-6 loading-spinner" width="80"
                                             height="80" viewBox="0 0 80 80" fill="none"
@@ -507,7 +507,7 @@
                                     @includeIf('affiliate::layouts.includes.affiliate_hidden')
 
                                     <input
-                                        class="w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 registration-name text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 registration-name text-13 md:text-15 md:h-52p"
                                         type="text" name="name" placeholder="{{ __('Your Name') }}">
                                     <span
                                         class="absolute border-gray-2 top-2 h-26p md:top-3 md:h-30p ltr:border-r ltr:md:left-3 ltr:left-2 ltr:pl-1.5 ltr:pr-3 rtl:border-l rtl:md:right-3 rtl:right-2 rtl:pr-1.5 rtl:pl-3">
@@ -524,7 +524,7 @@
                                 </div>
                                 <div class="mb-3 md:mb-5 relative">
                                     <input
-                                        class="w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 registration-email text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 registration-email text-13 md:text-15 md:h-52p"
                                         type="email" name="email" placeholder="{{ __('Email Address') }}"
                                         autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
                                     <span
@@ -542,7 +542,7 @@
                                 
                                 <div class="mb-3 md:mb-5 relative">
                                     <input id="phone"
-                                        class="cc-phone w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 registration-phone text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="cc-phone w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 registration-phone text-13 md:text-15 md:h-52p"
                                         type="text" name="phone">
                                     <span
                                         class="phone-validation-error block text-red-500 text-xs md:text-sm mt-1"></span>
@@ -550,7 +550,7 @@
 
                                 <div class="mb-3 md:mb-5 relative password-container">
                                     <input
-                                        class="password password-field w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 text-13 md:text-15 md:h-52p focus:border-gray-12 password-validation"
+                                        class="password password-field w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 text-13 md:text-15 md:h-52p password-validation"
                                         type="password" id="password" name="password"
                                         placeholder="{{ __('Password') }}" autocomplete="off" readonly
                                         onfocus="this.removeAttribute('readonly');">
@@ -599,7 +599,7 @@
 
                                 <div class="mb-3 md:mb-5 relative password-container">
                                     <input
-                                        class="password_confirmation password-field w-full border border-gray-2 rounded form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-10 text-13 md:text-15 md:h-52p focus:border-gray-12"
+                                        class="password_confirmation password-field w-full border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors duration-200 rounded-xl form-control ltr:pl-14 ltr:md:pl-16 rtl:pr-14 rtl:md:pr-16 roboto-regular font-normal text-gray-800 text-13 md:text-15 md:h-52p"
                                         type="password" id="password_confirmation" name="password_confirmation"
                                         placeholder="{{ __('Confirm Password') }}">
                                     <span
@@ -652,10 +652,10 @@
 
                                 <div>
                                     <button id="registration-user"
-                                        class="bg-gray-12 primary-bg-hover hover:text-gray-12 dm-sans py-2 md:py-3.5 text-white text-center w-full p-2 rounded text-base transition ease-in-out duration-200 h-10 md:h-52p"
+                                        class="bg-gray-12 primary-bg-hover hover:text-gray-12 dm-sans py-2 md:py-3.5 text-white text-center w-full p-2 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base h-10 md:h-52p"
                                         type="submit">
                                         <span
-                                            class="create-account-text">{{ strtoupper(__('Create account')) }}</span>
+                                            class="create-account-text font-semibold tracking-wide">{{ strtoupper(__('Create account')) }}</span>
                                         <div class="hidden registration-modal-loader">
                                             <svg class="h-4 w-4 md:h-6 md:w-6 loading-spinner" width="80"
                                                 height="80" viewBox="0 0 80 80" fill="none"

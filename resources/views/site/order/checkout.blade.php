@@ -1,7 +1,222 @@
 @extends('../site/layouts.app')
 @section('page_title', __('Check Out'))
 @section('css')
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
+=======
+    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <style>
+        /* Modern Minimalist Checkout Redesign */
+        #order-checkout-container {
+            margin-top: 3.5rem !important;
+            margin-bottom: 6rem !important;
+        }
+        .text-22 {
+            font-size: 1.875rem !important;
+            letter-spacing: -0.025em;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+        }
+        /* Form Labels */
+        .checkout-address-form label {
+            font-size: 0.75rem !important;
+            font-weight: 700 !important;
+            color: #64748b !important; 
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        /* Form Inputs */
+        .checkout-address-form input[type="text"],
+        .checkout-address-form select,
+        .checkout-address-form textarea {
+            padding-top: 0.875rem !important;
+            padding-bottom: 0.875rem !important;
+            padding-right: 1rem !important;
+            border-radius: 0.5rem !important; 
+            border: 1px solid #cbd5e1 !important; 
+            background-color: #ffffff !important; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem !important;
+            color: #0f172a !important;
+        }
+        /* Only apply left padding if it's not a phone input to prevent flag overlap */
+        .checkout-address-form input[type="text"]:not(#phone):not(#shipping_address_phone):not(.iti__tel-input),
+        .checkout-address-form select,
+        .checkout-address-form textarea {
+            padding-left: 1rem !important;
+        }
+        .checkout-address-form input[type="text"]:focus,
+        .checkout-address-form select:focus,
+        .checkout-address-form textarea:focus {
+            border-color: #2563eb !important; /* Blue focus ring */
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+            background-color: #ffffff !important;
+            outline: none !important;
+        }
+        /* Select2 override if used */
+        .select2-container .select2-selection--single {
+            height: 3.125rem !important;
+            border-radius: 0.5rem !important;
+            border: 1px solid #cbd5e1 !important;
+            background-color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Select2 focus effect */
+        .select2-container--focus .select2-selection--single,
+        .select2-container--open .select2-selection--single {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2) !important;
+            outline: none !important;
+        }
+        /* Address Cards */
+        .adress-container {
+            border-radius: 0.75rem !important;
+            border: 1px solid #e2e8f0 !important;
+            background-color: #ffffff;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .adress-container:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025) !important;
+            border-color: #cbd5e1 !important;
+            transform: translateY(-2px);
+        }
+        .adress-container.border-gray-12 {
+            border-color: #2563eb !important;
+            box-shadow: 0 0 0 1px #2563eb !important;
+            background-color: #f8fafc !important; 
+        }
+        /* Type of Place Radio Buttons */
+        .radio-btn {
+            border-radius: 0.5rem !important;
+            border: 1px solid #e2e8f0 !important;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+        input[type="radio"]:checked + .radio-btn {
+            border-color: #2563eb !important;
+            box-shadow: inset 0 0 0 1px #2563eb !important;
+            background-color: #f8fafc !important;
+            color: #2563eb !important;
+        }
+        /* Order Summary Card & Modern Address Card */
+        .checked-loader, .modern-card {
+            border-radius: 1rem !important;
+            border: none !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
+            padding: 2rem !important;
+            background: linear-gradient(to bottom, #ffffff, #f8fafc) !important;
+        }
+        .checked-loader > div, .modern-card > div {
+            padding: 0 !important; 
+        }
+        .checked-loader h3, .modern-card h3 {
+            font-size: 1.25rem !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a !important;
+        }
+        .checked-loader .border-b, .modern-card .border-b {
+            border-bottom-color: #e2e8f0 !important;
+        }
+        .checked-loader .border-t, .modern-card .border-t {
+            border-top-color: #e2e8f0 !important;
+            padding-top: 1.25rem !important;
+        }
+        /* Make Payment Button */
+        #makePayment {
+            padding: 1.25rem !important;
+            border-radius: 0.75rem !important;
+            font-size: 1.125rem !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background-color: #0f172a !important; /* Deep dark slate */
+            color: #ffffff !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+            border: none !important;
+            position: relative;
+            overflow: hidden;
+            margin-top: 1.5rem !important;
+        }
+        #makePayment:hover {
+            background-color: #2563eb !important; /* Bright Modern Blue */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4), 0 4px 6px -2px rgba(37, 99, 235, 0.2) !important;
+        }
+        /* Tabs as a Thin Segmented Box */
+        .c-tabs-nav {
+            display: flex !important;
+            background-color: #f1f5f9 !important; /* Soft transparent-like gray box */
+            border-radius: 0.5rem !important;
+            padding: 0.375rem !important; /* Thin box padding */
+            border: 1px solid #e2e8f0 !important;
+            gap: 0.375rem;
+            margin-bottom: 1.5rem !important;
+            width: 100% !important;
+        }
+        .c-tabs-nav__link {
+            flex: 1; /* Makes tabs take equal space */
+            font-weight: 700 !important;
+            color: #64748b !important;
+            padding: 0.625rem 1rem !important;
+            border-radius: 0.375rem !important;
+            border: none !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: transparent !important; /* Transparent when inactive */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .c-tabs-nav__link.is-active {
+            color: #2563eb !important; /* Blue active text */
+            background-color: #ffffff !important; /* Solid background when active */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06) !important;
+        }
+        .c-tabs-nav__link:hover:not(.is-active) {
+            color: #475569 !important;
+            background-color: rgba(255, 255, 255, 0.5) !important; /* semi transparent on hover */
+        }
+        .c-tab-nav-marker {
+            display: none !important; 
+        }
+        /* Tab Content Fade Animation */
+        .c-tab {
+            animation: fadeOut 0.2s ease-out forwards;
+        }
+        .c-tab.is-active {
+            animation: fadeInTab 0.4s ease-out forwards;
+        }
+        @keyframes fadeInTab {
+            0% {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+>>>>>>> 0d8dcd52b8e9d5eaf92b62191833f94b0170124f
 @endsection
 @section('content')
     <section class="layout-wrapper px-4 xl:px-0 mt-70p mb-20">
@@ -15,10 +230,11 @@
             <div class="flex md:flex-nowrap flex-wrap pt-8">
                 <div class="md:w-2/3 overflow-hidden flex justify-start relative mb-10 rtl-direction-space-left-cart">
                     <div class="flex flex-wrap w-full ltr:lg:pr-7 rtl:lg:pl-7">
-                        <div class="w-full mb-4">
-                            <span
-                                class="dm-bold font-bold text-gray-12 text-22">{{ __(':x Information', ['x' => __('Shipping')]) }}</span>
-                        </div>
+                        <div class="modern-card w-full">
+                            <div class="w-full mb-4 border-b border-gray-200 pb-4">
+                                <span
+                                    class="dm-bold font-bold text-gray-12 text-22">{{ __(':x Information', ['x' => __('Shipping')]) }}</span>
+                            </div>
                         <div id="tabs" class="p_tabs w-full mt-4 address-tab">
                             <div class="w-full">
                                 <div class="c-tabs-nav a-tab w-full grid-cols-2">
@@ -591,6 +807,7 @@
                             </a>
                         </div>
                         {{-- ship different address end --}}
+                        </div>
                     </div>
                 </div>
                 <div
