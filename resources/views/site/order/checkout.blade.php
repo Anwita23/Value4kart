@@ -100,18 +100,18 @@
             background-color: #f8fafc !important;
             color: #2563eb !important;
         }
-        /* Order Summary Card */
-        .checked-loader {
+        /* Order Summary Card & Modern Address Card */
+        .checked-loader, .modern-card {
             border-radius: 1rem !important;
             border: none !important;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02) !important;
             padding: 2rem !important;
             background: linear-gradient(to bottom, #ffffff, #f8fafc) !important;
         }
-        .checked-loader > div {
+        .checked-loader > div, .modern-card > div {
             padding: 0 !important; 
         }
-        .checked-loader h3 {
+        .checked-loader h3, .modern-card h3 {
             font-size: 1.25rem !important;
             font-weight: 800 !important;
             text-transform: uppercase;
@@ -121,10 +121,10 @@
             margin-bottom: 1.5rem;
             color: #0f172a !important;
         }
-        .checked-loader .border-b {
+        .checked-loader .border-b, .modern-card .border-b {
             border-bottom-color: #e2e8f0 !important;
         }
-        .checked-loader .border-t {
+        .checked-loader .border-t, .modern-card .border-t {
             border-top-color: #e2e8f0 !important;
             padding-top: 1.25rem !important;
         }
@@ -226,10 +226,11 @@
             <div class="flex md:flex-nowrap flex-wrap pt-8">
                 <div class="md:w-2/3 overflow-hidden flex justify-start relative mb-10 rtl-direction-space-left-cart">
                     <div class="flex flex-wrap w-full ltr:lg:pr-7 rtl:lg:pl-7">
-                        <div class="w-full mb-4">
-                            <span
-                                class="dm-bold font-bold text-gray-12 text-22">{{ __(':x Information', ['x' => __('Shipping')]) }}</span>
-                        </div>
+                        <div class="modern-card w-full">
+                            <div class="w-full mb-4 border-b border-gray-200 pb-4">
+                                <span
+                                    class="dm-bold font-bold text-gray-12 text-22">{{ __(':x Information', ['x' => __('Shipping')]) }}</span>
+                            </div>
                         <div id="tabs" class="p_tabs w-full mt-4 address-tab">
                             <div class="w-full">
                                 <div class="c-tabs-nav a-tab w-full grid-cols-2">
@@ -802,6 +803,7 @@
                             </a>
                         </div>
                         {{-- ship different address end --}}
+                        </div>
                     </div>
                 </div>
                 <div
