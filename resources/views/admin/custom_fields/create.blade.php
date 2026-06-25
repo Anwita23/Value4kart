@@ -241,6 +241,6 @@
         const fieldOptions = "";
         const defaultValue = "";
     </script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/custom-fields.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/custom-fields.min.js') }}"></script>
 @endsection

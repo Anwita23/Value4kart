@@ -2,7 +2,7 @@
 @section('page_title', __('Subscribers'))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/marketing.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/marketing.min.css') }}">
 @endsection
 
 @section('content')
@@ -41,6 +41,6 @@
         var pdf = "{{ auth()->user()?->hasPermission('Modules\Newsletter\Http\Controllers\SubscriberController@pdf') ? '1' : '0' }}";
         var csv = "{{ auth()->user()?->hasPermission('Modules\Newsletter\Http\Controllers\SubscriberController@csv') ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/newsletter.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/newsletter.min.js') }}"></script>
 @endsection

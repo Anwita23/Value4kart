@@ -57,6 +57,6 @@
     <script>
         var userUrl = '{{ route('find.users.ajax') }}';
     </script>
-    <script src="{{ asset('public/dist/js/custom/notification.min.js?v=3.3') }}"></script>
+    <script src="{{ asset('dist/js/custom/notification.min.js?v=3.3') }}"></script>
 @endsection
 

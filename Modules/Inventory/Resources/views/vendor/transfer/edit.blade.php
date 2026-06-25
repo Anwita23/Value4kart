@@ -1,10 +1,10 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Edit :x', ['x' => __('Transfer')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Inventory/Resources/assets/css/purchase.min.css') }}">
 @endsection
 
@@ -212,10 +212,10 @@
 @endsection
 @section('js')
     <script src="{{ asset('/public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script>
         var rowNo = '{{ $rowNo+1 }}';
         var editStack = '{{ json_encode($stack) }}';

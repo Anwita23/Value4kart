@@ -46,6 +46,6 @@
     <script>
         var vendorUrl = '{{ route('find.vendors.ajax') }}';
     </script>
-    <script src="{{ asset('public/datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('Modules/Inventory/Resources/assets/js/adjust.min.js?v=3.3') }}"></script>
 @endsection

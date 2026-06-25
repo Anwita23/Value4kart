@@ -30,8 +30,8 @@ class CompanySettingController extends Controller
         $response           = [];
         $companySettings    = preference();
         if ($request->isMethod('get')) {
-            $logo = \Storage::disk()->url('public/uploads/companyPic/' . $companySettings['company_logo']);
-            $icon = \Storage::disk()->url('public/uploads/companyIcon/' . $companySettings['company_icon']);
+            $logo = \Storage::disk()->asset('uploads/companyPic/' . $companySettings['company_logo']);
+            $icon = \Storage::disk()->asset('uploads/companyIcon/' . $companySettings['company_icon']);
             unset($companySettings['company_logo']);
             unset($companySettings['company_icon']);
             $companySettings['company_logo'] = $logo;
@@ -47,7 +47,7 @@ class CompanySettingController extends Controller
             $post['company_gstin'] = $request->company_tax_id;
             $updatedLogo           = false;
             $updatedIcon           = false;
-            $path                  = createDirectory('public/uploads/companyPic');
+            $path                  = createDirectory('uploads/companyPic');
 
             if (! empty($request->file('company_logo'))) {
                 $data['companyLogo'] = Preference::where('field', 'company_logo')->where('category', 'company')->first();
@@ -69,7 +69,7 @@ class CompanySettingController extends Controller
             }
 
             if (! empty($request->file('company_icon'))) {
-                $pathOfIcon          = createDirectory('public/uploads/companyIcon');
+                $pathOfIcon          = createDirectory('uploads/companyIcon');
                 $data['companyIcon'] = Preference::where('field', 'company_icon')->where('category', 'company')->first();
                 $updatedIcon         = (new File())->store([$request->file('company_icon')], $pathOfIcon, 'Company', $data['companyIcon']->id, ['isUploaded' => false, 'isOriginalNameRequired' => true]);
             }

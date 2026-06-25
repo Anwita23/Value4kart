@@ -4,7 +4,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Delivery/Resources/assets/css/delivery-module.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 @endsection
 
 @php
@@ -228,10 +228,10 @@
         var length = "{!! $length !!}";
         var currentUrl = "{!! url()->full() !!}";
         var loginNeeded = "{!! session('loginRequired') ? 1 : 0 !!}";
-        var utilJs = "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}";
+        var utilJs = "{{ asset('dist/js/intl-tel-input/utils.min.js') }}";
     </script>
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('Modules/Delivery/Resources/assets/js/carrier.min.js') }}"></script>
 @endsection

@@ -26,7 +26,7 @@
     var pdf = 1;
     var csv = 1;
 </script>
-<script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 <script>
     exportPdfCsv('#subscriber-list-container', '/delivery/carrier/all/');
 </script>

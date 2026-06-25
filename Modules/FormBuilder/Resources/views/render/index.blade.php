@@ -3,7 +3,7 @@
 @section('page_title', $form->name)
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/admin-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/admin-ui.min.css') }}">
 @endsection
 
 @section('content')

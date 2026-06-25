@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Create :x', ['x' => __('Pages')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/summer-note/summernote.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
 @endsection
 @section('content')
@@ -151,7 +151,7 @@
     <script>
         const langUrl = '{{ route('vendor.home.create') }}';
     </script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('Modules/CMS/Resources/assets/js/app.min.js') }}"></script>
     <script src="{{ asset('Modules/CMS/Resources/assets/js/page.min.js') }}"></script>
 @endsection

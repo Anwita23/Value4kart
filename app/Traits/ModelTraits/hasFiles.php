@@ -351,7 +351,10 @@ trait hasFiles
                     return $this->defaultFileUrl($options['type']);
                 }
 
-                return \Storage::disk()->url($this->filePathOld($file->file_name));
+                $filePath = $this->filePathOld($file->file_name);
+                // Remove 'public/' prefix from path since disk root is project root
+                $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+                return \Storage::disk()->url($filePath);
             }
 
             // remove it later end
@@ -375,7 +378,10 @@ trait hasFiles
                 cache()->put([config('cache.prefix') . '.loadItem.' . $this->id => $file->file_name], now()->addDays(1));
             }
 
-            return \Storage::disk()->url($this->filePath($file->file_name));
+            $filePath = $this->filePath($file->file_name);
+            // Remove 'public/' prefix from path since disk root is project root
+            $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+            return \Storage::disk()->url($filePath);
         }
     }
 
@@ -394,7 +400,10 @@ trait hasFiles
             return $this->defaultFileUrl($options['type']);
         }
 
-        return \Storage::disk()->url($this->filePathNew($file->file_name));
+        $filePath = $this->filePathNew($file->file_name);
+        // Remove 'public/' prefix from path since disk root is project root
+        $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+        return \Storage::disk()->url($filePath);
     }
 
     /**
@@ -419,7 +428,10 @@ trait hasFiles
             if (! isFileExist($this->filePathOld($file->file_name))) {
                 $filesUrl[$key] = $this->defaultFileUrl($options['type']);
             } else {
-                $filesUrl[$key] = \Storage::disk()->url($this->filePathOld($file->file_name));
+                $filePath = $this->filePathOld($file->file_name);
+                // Remove 'public/' prefix from path since disk root is project root
+                $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+                $filesUrl[$key] = \Storage::disk()->url($filePath);
             }
         }
 
@@ -450,7 +462,10 @@ trait hasFiles
                     $filesPath[$key] = $this->defaultFileUrl($options['type']);
                 } else {
                     $filesUrlNew[$key] = $file;
-                    $filesPath[$key] = \Storage::disk()->url($this->filePath($file->file_name));
+                    $filePath = $this->filePath($file->file_name);
+                    // Remove 'public/' prefix from path since disk root is project root
+                    $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+                    $filesPath[$key] = \Storage::disk()->url($filePath);
                 }
             }
 
@@ -479,7 +494,10 @@ trait hasFiles
             if (! isFileExist($this->filePath($file->file_name))) {
                 $filesUrl[$key] = $this->defaultFileUrl($options['type']);
             } else {
-                $filesUrl[$key] = \Storage::disk()->url($this->filePath($file->file_name));
+                $filePath = $this->filePath($file->file_name);
+                // Remove 'public/' prefix from path since disk root is project root
+                $filePath = str_replace(['public\\', 'public/'], '', $filePath);
+                $filesUrl[$key] = \Storage::disk()->url($filePath);
             }
         }
 
@@ -627,7 +645,7 @@ trait hasFiles
         $image = asset(defaultImage($this->objectType()));
 
         if ($file && $file->url) {
-            $filePath = 'public/uploads/' . $file->url;
+            $filePath = 'uploads/' . $file->url;
             $isLocal = config('filesystems.default') === 'local';
 
             if ($isLocal && file_exists(public_path('uploads/' . $file->url))) {

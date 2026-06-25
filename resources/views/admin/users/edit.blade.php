@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Edit :x', ['x' => __('User')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/lightbox/css/lightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/user-list.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 @endsection
 @section('content')
     <div class="col-sm-12" id="user-edit-container">
@@ -279,7 +279,7 @@
     }
 @endphp
 @section('js')
-    <script src="{{ asset('public/dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
 
     <script type="text/javascript">
         "use strict";
@@ -294,12 +294,12 @@
         var vendorRoleUrl = "{!! route('users.vendor.role') !!}";
         var vendorStaffRole = "{!! $vendorStaffRole !!}";
         var loginNeeded = "{!! session('loginRequired') ? 1 : 0 !!}";
-        var utilJs = "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}";
+        var utilJs = "{{ asset('dist/js/intl-tel-input/utils.min.js') }}";
     </script>
     
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
     
-    <script src="{{ asset('public/dist/js/custom/user.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/user.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 @endsection

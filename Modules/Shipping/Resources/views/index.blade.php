@@ -2,9 +2,9 @@
 @section('page_title', __('Shipping'))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css') }}">
     <!-- select2 css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Shipping/Resources/assets/css/shipping.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
 @endsection
@@ -107,11 +107,11 @@
     <script>
         var currencySymbol = "{!! preg_replace('/[0-9\.]+/', '', formatNumber('')) !!}"
     </script>
-    <script src="{{ asset('public/dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/condition.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/xss.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('dist/js/condition.min.js') }}"></script>
+    <script src="{{ asset('dist/js/xss.min.js') }}"></script>
     <!-- select2 JS -->
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('Modules/Shipping/Resources/assets/js/shipping.min.js') }}"></script>
 @endsection

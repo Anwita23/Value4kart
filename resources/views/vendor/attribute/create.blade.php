@@ -2,8 +2,8 @@
 @section('page_title', __('Create :x', ['x' => __('Attribute')]))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/minicolor-override.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/minicolor-override.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -130,10 +130,10 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/attribute.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/js/pages/form-picker-custom.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/attribute.min.js') }}"></script>
+    <script src="{{ asset('datta-able/js/pages/form-picker-custom.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
 @endsection

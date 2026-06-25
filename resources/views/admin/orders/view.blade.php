@@ -2,11 +2,11 @@
 @section('page_title', __('View :x', ['x' => __('Invoice')]))
 @section('css')
     <!-- date range picker css -->
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
     <!-- select2 css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ asset('public/dist/css/invoice.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('dist/css/invoice.min.css') }}">
 @endsection
 @section('content')
 
@@ -202,21 +202,21 @@
         var currentUrl = '{{ route('order.view', $order->id) }}';
         const changeStatusRoute = "{{ route('order.changeStatus') }}";
     </script>
-    <script src="{{ asset('public/datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/common.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/common.min.js') }}"></script>
     <!-- select2 JS -->
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <!-- date range picker Js -->
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/invoice.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/jquery.blockUI.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/order.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/invoice.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/order.min.js') }}"></script>
     
     <script src="{{ asset('/public/dist/js/custom/site/address.min.js') }}"></script>
 
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
     
     <script src="{{ asset('/public/dist/js/custom/site/invoice_edit.min.js') }}"></script>
     

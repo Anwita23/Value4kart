@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
-<link rel="stylesheet" href="{{ asset('public/datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
     
 @php
     $fields = App\Models\CustomField::with(['customFieldValues' => function($query) use ($relId) {
@@ -133,8 +133,8 @@
     @endif
 @endforeach
 
-<script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-<script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
-<script src="{{ asset('public/datta-able/js/pages/form-picker-custom.min.js') }}"></script>
-<script src="{{ asset('public/datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/custom-fields.min.js') }}"></script>
+<script src="{{ asset('dist/js/moment.min.js') }}"></script>
+<script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+<script src="{{ asset('datta-able/js/pages/form-picker-custom.min.js') }}"></script>
+<script src="{{ asset('datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/custom-fields.min.js') }}"></script>

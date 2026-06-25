@@ -49,5 +49,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection

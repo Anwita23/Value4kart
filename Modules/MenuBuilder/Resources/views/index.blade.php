@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Menus'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/menu-builder.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/menu-builder.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 @endsection
 @section('content')

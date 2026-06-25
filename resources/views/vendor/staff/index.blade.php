@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Staffs'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/user-list.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
 @endsection
 @section('content')
 
@@ -59,5 +59,5 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/user.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/user.min.js') }}"></script>
 @endsection

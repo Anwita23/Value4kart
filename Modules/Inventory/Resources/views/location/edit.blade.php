@@ -194,6 +194,6 @@
         var vendorUrl = '{{ route('find.vendors.ajax') }}';
     </script>
     <script src="{{ asset('/public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('Modules/Inventory/Resources/assets/js/location.min.js') }}"></script>
 @endsection

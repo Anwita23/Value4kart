@@ -220,7 +220,7 @@ class UpgradeManager extends Contractor
                 'storage/framework/sessions',
                 'storage/framework/views',
                 'storage/logs',
-                'public/uploads',
+                'uploads',
             ],
         ]);
 

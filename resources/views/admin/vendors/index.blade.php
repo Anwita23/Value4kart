@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Vendors'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/vendor-responsiveness.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/vendor-responsiveness.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -40,6 +40,6 @@
         var pdf = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\VendorController@pdf')) ? '1' : '0' }}";
         var csv = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\VendorController@csv')) ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/vendors.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/vendors.min.js') }}"></script>
 @endsection

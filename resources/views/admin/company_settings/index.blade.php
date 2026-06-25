@@ -3,8 +3,8 @@
 @section('css')
     {{-- Media manager --}}
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 @endsection
 
 @section('content')
@@ -296,10 +296,10 @@
         let oldState = "{!! isset($companyData['company']['company_state']) ? $companyData['company']['company_state'] : 'null' !!}";
         let oldCity = "{!! isset($companyData['company']['company_city']) ? $companyData['company']['company_city'] : 'null' !!}";
         let url = "{{ URL::to('/') }}";
-        var utilJs = "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}";
+        var utilJs = "{{ asset('dist/js/intl-tel-input/utils.min.js') }}";
     </script>
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/settings.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/settings.min.js') }}"></script>
 @endsection

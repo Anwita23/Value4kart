@@ -1,7 +1,7 @@
 @extends('site.myaccount.layouts.master')
 @section('page_title', __('Refund Details'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/lightbox/css/lightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
 @endsection
 @section('content')
     <main class="md:w-3/5 lg:w-3/4 w-full main-content flex flex-col flex-1" id="customer_refund_view">
@@ -116,5 +116,5 @@
     </main>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
 @endsection

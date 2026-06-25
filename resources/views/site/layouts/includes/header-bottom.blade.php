@@ -30,7 +30,7 @@
                                     <li class="first-dropdown-li">
                                         <a style="color: {{ $header['bottom']['text_color'] }}" class="first-list mb-2 dm-sans text-base custom-bottom-border {{ !empty($menu->class) ? $menu->class : '' }} {{ str_replace('/#', '', $activeUrl) == url()->current() ? 'active-border-bottom' : ' ' }}"
                                             href="{{ $url }}">{{ ucwords($menu->label) }}</a>
-                                        <ul class="dm-sans text-sm hidden md:block bg-white first-dropdown menu dropdown-enable box-shadow-dropdown {{ strtolower($menu->label) == 'pages' || (!empty($menu->link) && str_contains($menu->link, 'pages')) ? 'horizontal-dropdown' : '' }}">
+                                        <ul class="dm-sans text-sm bg-white first-dropdown menu dropdown-enable box-shadow-dropdown">
                                             @foreach ($menu->child as $submenu)
                                                 @php
                                                     $childUrl = $submenu->url(empty($submenu->params) ? 'page' : '');
@@ -265,7 +265,7 @@
                                                 </div>
                                             @endif
                                         </div>
-                                        <img class="hero-slide-img md:rounded-lg object-cover w-full" style="height: 500px;" src="{{ $slide->fileUrlQuery() }}">
+                                        <img class="hero-slide-img md:rounded-lg object-cover w-full" style="height: 400px; min-height: 250px; max-height: 600px; width: 100%; object-fit: cover;" src="{{ $slide->fileUrlQuery() }}">
                                     </div>
                                 </div>
                                 @endforeach

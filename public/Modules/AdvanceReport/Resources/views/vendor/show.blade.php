@@ -1,8 +1,8 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Advance Reports') . ' - ' . $report['name'])
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/AdvanceReport/Resources/assets/css/style.min.css') }}">
 @endsection
 @section('content')
@@ -132,10 +132,10 @@
         var endDate = @json($toDate ?? 'undefined');
         var currentSearch = @json(request()->get('search', ''));
     </script>
-        <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-        <script src="{{ asset('public/dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js') }}"></script>
-        <script src="{{ asset('public/dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js') }}"></script>
-        <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+        <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+        <script src="{{ asset('dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js') }}"></script>
+        <script src="{{ asset('dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
         <script src="{{ asset('Modules/AdvanceReport/Resources/assets/js/report-config.min.js') }}"></script>
         <script src="{{ asset('Modules/AdvanceReport/Resources/assets/js/common.min.js') }}"></script>
         <script src="{{ asset('Modules/AdvanceReport/Resources/assets/js/table.min.js') }}"></script>

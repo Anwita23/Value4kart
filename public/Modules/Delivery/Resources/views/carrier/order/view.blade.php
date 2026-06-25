@@ -2,7 +2,7 @@
 @section('page_title', __('Order Details'))
 @section('css')
     <!-- select2 css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 @section('content')
 
@@ -387,9 +387,9 @@
         var orderUrl = "{{ route('carrier.change_status') }}";
         var orderView = "admin";
     </script>
-    <script src="{{ asset('public/dist/js/custom/common.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/jquery.blockUI.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/common.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
     <!-- select2 JS -->
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('Modules/Delivery/Resources/assets/js/carrier-order.min.js') }}"></script>
 @endsection

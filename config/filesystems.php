@@ -98,7 +98,7 @@ return [
         ],
         'public-folder' => [
             'driver' => 'local',
-            'root' => base_path('public/uploads'),
+            'root' => base_path('uploads'),
             'url' => env('APP_URL'),
             'visibility' => 'public',
             'throw' => false,

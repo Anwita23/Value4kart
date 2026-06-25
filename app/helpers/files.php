@@ -419,7 +419,7 @@ if (! function_exists('getPdfFont')) {
         switch ($languageShortCode) {
             case 'ar':
                 $fontFamily['name'] = 'Tajawal' . ', sans-serif';
-                $fontFamily['link'] = asset('public/dist/fonts/tajawal.css?v1');
+                $fontFamily['link'] = asset('dist/fonts/tajawal.css?v1');
 
                 break;
 

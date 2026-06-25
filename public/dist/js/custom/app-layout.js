@@ -47,7 +47,7 @@ $(document).on("click", "#itemNotifications", function () {
     $("#notifications").html(
         '<img id="itemNotificationsLoader" src="' +
             SITE_URL +
-            '/public/dist/img/loader/spiner.gif" />'
+            '/dist/img/loader/spiner.gif" />'
     );
     $.ajax({
         url: SITE_URL + "/item-notifications",

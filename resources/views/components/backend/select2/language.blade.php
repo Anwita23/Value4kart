@@ -1,7 +1,7 @@
 @php
     $languages = \App\Models\Language::getAll()->where('status', 'Active');
     $languageFlags = $languages->mapWithKeys(function ($language) {
-        return [$language->short_name => url('public/datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg')];
+        return [$language->short_name => asset('datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg')];
     })
 @endphp
 
@@ -16,4 +16,4 @@
 <script>
     var flags = @json($languageFlags);
 </script>
-<script src="{{ asset('public/dist/js/custom/language-flag.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/language-flag.min.js') }}"></script>

@@ -31,14 +31,14 @@
         --semi-primary-color: {{ $primaryColor . '11' }};
     }
     </style>
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/app.min.css?v=2.5') }}" />
-    <link rel="stylesheet" href="{{ asset('public/css/tailwind-custom.min.css?v=2.6') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/google-font-roboto.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.min.css?v=2.5') }}" />
+    <link rel="stylesheet" href="{{ asset('css/tailwind-custom.min.css?v=2.6') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/google-font-roboto.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css" />
 
     @php
         $favicon = App\Models\Preference::getFavicon();
@@ -53,11 +53,11 @@
 
     @doAction("after_site_css_{$view_name}")
     <!-- Menubar css -->
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/ionicon.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/ionicon.min.css') }}" />
     <!-- Menubar css end-->
 
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="{{ asset('public/dist/css/site_custom.min.css?v=2.8') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/site_custom.min.css?v=2.8') }}">
 
     <!-- User define custom dynamic css file -->
     @if (File::exists('Modules/CMS/Resources/assets/css/user-custom.css'))
@@ -65,7 +65,7 @@
     @endif
     
     @if (file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+        <script src="{{ asset('js/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">
             const translates = {};
@@ -108,7 +108,7 @@
         @include('partials.phone-input-config')
     </script>
     <!-- Required Js -->
-    <script src="{{ asset('public/dist/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
     <!-- Affiliate Code Common Header -->
     
     @doAction('before_site_head')
@@ -196,21 +196,21 @@
     <script>
         var loginNeeded = "{!! session('loginRequired') ? 1 : 0 !!}";
     </script>
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/formatting.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/formatting.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
     <!-- Custom Js -->
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/alpine.min.js') }}" defer></script>
-    <script src="{{ asset('public/dist/js/custom/site/drawer.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/script.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/cart.min.js?v=3.2.1') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/lang.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/site-nav.min.js?v=5.0.0') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/sweet-alert2.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/site.min.js?v=4.3.0') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/main.min.js?v=3.2.1') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/alpine.min.js') }}" defer></script>
+    <script src="{{ asset('dist/js/custom/site/drawer.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/script.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/cart.min.js?v=3.2.1') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/lang.min.js') }}"></script>
+    <script src="{{ asset('dist/js/site-nav.min.js?v=5.0.0') }}"></script>
+    <script src="{{ asset('frontend/assets/js/sweet-alert2.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/site.min.js?v=4.3.0') }}"></script>
+    <script src="{{ asset('frontend/assets/js/main.min.js?v=3.2.1') }}"></script>
 
     @doAction("before_site_js_{$view_name}")
 
@@ -224,7 +224,7 @@
     @endif
 
     @doAction('before_site_body')
-    <script src="{{ asset('public/js/fk-flyout.js?v=' . time()) }}"></script>
+    <script src="{{ asset('js/fk-flyout.js?v=' . time()) }}"></script>
 </body>
 
 </html>

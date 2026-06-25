@@ -15,7 +15,7 @@
                          <div class="h-44" style="height: {{ $component->height . 'px' }}">
                              @isset($cta->image)
                                  <img class="h-full w-full object-fit {{ $component->rounded == 1 ? 'rounded-md' : '' }}"
-                                     src="{{ Storage::disk()->url('public/uploads') . DIRECTORY_SEPARATOR . $cta['image'] }}">
+                                     src="{{ Storage::disk()->url('uploads') . DIRECTORY_SEPARATOR . $cta['image'] }}">
                              @endisset
                          </div>
                          <div class="absolute p-6 top-0 right-0 bottom-0 left-0 flex align-items-center">

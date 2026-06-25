@@ -8,9 +8,9 @@
     <title>{{ config('app.name') }} - {{ __("Authorization") }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}" rel="stylesheet">
 
-   <link rel="stylesheet" href="{{ asset('public/dist/css/laravel-authrization.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('dist/css/laravel-authrization.min.css') }}">
 </head>
 <body class="passport-authorize">
     <div class="container">

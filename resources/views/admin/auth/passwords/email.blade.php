@@ -1,8 +1,8 @@
 @extends('admin.auth.login_templates.' . (isset($template) ? $template : preference('auth_template_name', 'template-1')) . '.index')
 
 @section('sub-content')
-<link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
-<link rel="stylesheet" href="{{ asset('public/dist/css/auth/enhanced-auth-forms.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/auth/enhanced-auth-forms.min.css') }}">
 <form method="POST" action="{{ route('login.sendResetLink') }}" class="admin-login-con my-0 enhanced-login-form" id="admin-reset-password-form">
     @csrf
 
@@ -74,12 +74,12 @@
 
 <script>
     window.ENHANCED_AUTH_FORMS_CONFIG = {
-        utilJs: "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}",
+        utilJs: "{{ asset('dist/js/intl-tel-input/utils.min.js') }}",
         defaultCountry: "{{ preference('default_country_code', '') ?: '' }}",
         onlyCountries: @json(array_values(array_filter((array) json_decode(preference('phone_country_codes'), true))))
     };
 </script>
-<script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/auth/enhanced-auth-forms.min.js') }}"></script>
+<script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/auth/enhanced-auth-forms.min.js') }}"></script>
 
 @endsection

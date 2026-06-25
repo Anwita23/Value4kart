@@ -194,7 +194,7 @@ class TicketController extends Controller
 
         $data['ticketReplies']      = (new Thread())->getAllTicketRepliersById($ticket_id);
         $data['ticketStatus'] = ThreadStatus::where('id', '!=', $data['ticketDetails']->thread_status_id)->orderBy('name')->get();
-        $data['filePath'] = 'public/uploads';
+        $data['filePath'] = 'uploads';
         $data['assignee'] = User::where('status', 'active')->get();
 
         return view('ticket::reply', $data);
@@ -248,7 +248,7 @@ class TicketController extends Controller
             // If file exeist then delete
             $file = DB::table('files')->where(['ticket_reply_id' => $request->id, 'ticket_id' => $request->ticket_id])->first();
             if (! empty($file)) {
-                \Storage::disk()->delete('/public/uploads/ticketFile/' . $file->file_name);
+                \Storage::disk()->delete('/uploads/ticketFile/' . $file->file_name);
                 DB::table('files')->where(['ticket_reply_id' => $request->id, 'ticket_id' => $request->ticket_id])->delete();
             }
             // Delete Ticket Reply
@@ -285,7 +285,7 @@ class TicketController extends Controller
             $replyFiles[$ticketReply->id] = (new File())->getFiles('Ticket Reply', $ticketReply->id);
         }
         $data['replyFiles'] = $replyFiles;
-        $data['filePath'] = 'public/uploads/tickets';
+        $data['filePath'] = 'uploads/tickets';
 
         return view('admin.customerPanel.ticket.reply', $data);
     }

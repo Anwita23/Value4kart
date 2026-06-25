@@ -115,7 +115,7 @@
                                                                             <i class="fa fa-times"></i>
                                                                         </div>
                                                                         <img class="upl-img p-1"
-                                                                            src="{{ Storage::disk()->url('public/uploads') . DIRECTORY_SEPARATOR . $cta['image'] }}"
+                                                                            src="{{ Storage::disk()->url('uploads') . DIRECTORY_SEPARATOR . $cta['image'] }}"
                                                                             alt="{{ __('Image') }}">
                                                                         <input type="hidden"
                                                                             name="cta[{{ $loop->index }}][image]"

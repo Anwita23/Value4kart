@@ -7,7 +7,7 @@
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 10]>
-        <script src="{{ asset('public/dist/js/respond.min.js') }}"></script>
+        <script src="{{ asset('dist/js/respond.min.js') }}"></script>
     <![endif]-->
     <!-- Meta -->
     <meta charset="utf-8">
@@ -22,26 +22,26 @@
         <link rel='shortcut icon' href="{{ $favicon }}" type='image/x-icon' />
     @endif
     <!-- fontawesome icon -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
     <!-- Material icon -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/material/css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/material/css/materialdesignicons.min.css') }}">
     <!-- flaq icon -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/flag/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/flag/css/flag-icon.min.css') }}">
     <!-- animation css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/animation/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/animation/css/animate.min.css') }}">
     <!-- vendor css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/feather/css/feather.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able//fonts/datta/datta-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/feather/css/feather.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able//fonts/datta/datta-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('public/dist/css/custom.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/vendor-responsiveness.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/admin-ui.min.css?v=' . config('martvill.file_version')) }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/vendor-responsiveness.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/admin-ui.min.css?v=' . config('martvill.file_version')) }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 
     <!--Custom CSS that was written on view-->
 
@@ -53,12 +53,12 @@
 
     <!-- Theme style RTL -->
     @if (\Cache::get(config('cache.prefix') . '-language-direction') == 'rtl')
-        <link rel="stylesheet" href="{{ asset('public/datta-able/css/layouts/rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('datta-able/css/layouts/rtl.min.css') }}">
     @endif
 
 
     @if(file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+        <script src="{{ asset('js/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">const translates = {};</script>
     @endif
@@ -80,10 +80,10 @@
     </script>
 
     <!-- Required Js -->
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
     @doAction("before_delivery_panel_head")
 </head>
 
@@ -164,31 +164,31 @@
                 <ul class="iew-download">
                     <li>
                         <a href="//www.google.com/chrome/">
-                            <img src="{{ asset('public/datta-able/images/browser/chrome.png') }}" alt="Chrome">
+                            <img src="{{ asset('datta-able/images/browser/chrome.png') }}" alt="Chrome">
                             <div>Chrome</div>
                         </a>
                     </li>
                     <li>
                         <a href="//www.mozilla.org/en-US/firefox/new/">
-                            <img src="{{ asset('public/datta-able/images/browser/firefox.png') }}" alt="Firefox">
+                            <img src="{{ asset('datta-able/images/browser/firefox.png') }}" alt="Firefox">
                             <div>Firefox</div>
                         </a>
                     </li>
                     <li>
                         <a href="//www.opera.com">
-                            <img src="{{ asset('public/datta-able/images/browser/opera.png') }}" alt="Opera">
+                            <img src="{{ asset('datta-able/images/browser/opera.png') }}" alt="Opera">
                             <div>Opera</div>
                         </a>
                     </li>
                     <li>
                         <a href="//www.apple.com/safari/">
-                            <img src="{{ asset('public/datta-able/images/browser/safari.png') }}" alt="Safari">
+                            <img src="{{ asset('datta-able/images/browser/safari.png') }}" alt="Safari">
                             <div>Safari</div>
                         </a>
                     </li>
                     <li>
                         <a href="//windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="{{ asset('public/datta-able/images/browser/ie.png') }}" alt="{{ __('Image') }}">
+                            <img src="{{ asset('datta-able/images/browser/ie.png') }}" alt="{{ __('Image') }}">
                             <div>IE (11 & above)</div>
                         </a>
                     </li>
@@ -200,17 +200,17 @@
     <!-- Warning Section Ends -->
     {{-- Custom Js --}}
     <!-- Required Js -->
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/js/pcoded.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('datta-able/js/pcoded.min.js') }}"></script>
     <!-- Custom Js -->
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
     <script src="{{ asset('Modules/Delivery/Resources/assets/js/delivery-module.min.js') }}"></script>
     @doAction("before_delivery_panel_js_{$view_name}")
     @yield('parent-js')
     @doAction("after_delivery_panel_js_{$view_name}")
-    <script src="{{ asset('public/dist/js/custom/app-layout.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/app-layout.min.js') }}"></script>
     @doAction("before_delivery_panel_body")
 </body>
 

@@ -23,7 +23,7 @@
         $definedData = get_defined_vars();
     }
 @endphp
-<link rel="stylesheet" href="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/swiper/swiper-bundle.min.css') }}">
 
 <div id="item-view-load">
     <!--Overlay Effect-->
@@ -607,5 +607,5 @@
         var videoExtensions = @json(getFileExtensions(6));
         var stockStatus = "{{ $stock_status ?? null }}";
     </script>
-    <script src="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/product-view.min.js?v=3.2.1') }}"></script>
+    <script src="{{ asset('frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/product-view.min.js?v=3.2.1') }}"></script>

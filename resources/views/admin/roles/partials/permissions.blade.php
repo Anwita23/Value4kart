@@ -150,10 +150,10 @@
 @endif
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/permissions-management.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/permissions-management.min.css') }}">
 @endpush
 
 @push('scripts')
-    <script src="{{ asset('public/dist/js/custom/permissions-management.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permissions-management.min.js') }}"></script>
 @endpush
 

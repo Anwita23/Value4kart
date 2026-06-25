@@ -644,10 +644,14 @@ trait ProductTrait
         }
 
         if (in_array($this->productThumbnail, array_keys((new File())->sizeRatio()))) {
-            return \Storage::disk()->url(implode(DIRECTORY_SEPARATOR, ['public', 'uploads', config('martvill.thumbnail_dir'), $this->productThumbnail, $file]));
+            $path = implode(DIRECTORY_SEPARATOR, ['public', 'uploads', config('martvill.thumbnail_dir'), $this->productThumbnail, $file]);
+            $path = str_replace(['public\\', 'public/'], '', $path);
+            return \Storage::disk()->url($path);
         }
 
-        return \Storage::disk()->url('public' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $file);
+        $path = 'public' . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . $file;
+        $path = str_replace(['public\\', 'public/'], '', $path);
+        return \Storage::disk()->url($path);
     }
 
     /**
