@@ -59,7 +59,7 @@
         </a>
         
         {{-- Hover Actions Bar --}}
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30">
             <div class="flex items-center bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                 {{-- Quick View --}}
                 @if ($product['quick_view'] && !$item->isGroupedProduct())
