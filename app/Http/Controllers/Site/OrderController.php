@@ -97,49 +97,45 @@ class OrderController extends Controller
 
         $cartService = new AddToCartService();
 
-        if (is_array($hasCart) && count($hasCart) > 0) {
-            if (pageReload()) {
-                $cartService->destroySessionAddress();
-            }
-
-            $selectedTotal = Cart::totalPrice('selected');
-            $taxShipping = $cartService->getTaxShipping();
-            $tax = $taxShipping['tax'];
-            $shipping = $taxShipping['shipping'];
-            $shippingIndex = $cartService->getShippingIndex();
-
-            $addresses = [];
-            $defaultAddresses = null;
-            $defaultAddress = null;
-            if (Auth::check()) {
-                $addresses = Address::getAll()->where('user_id', Auth::user()->id);
-                $defaultAddresses = Address::getAll()->where('user_id', Auth::user()->id)->where('is_default', 1)->first();
-                $defaultAddress = $defaultAddresses ? $defaultAddresses->id : null;
-            }
-
-            $countries = Country::getAll();
-            $coupon = isActive('Coupon') ? Cart::getCouponData() : null;
-            $couponOffer = (isActive('Coupon') && $coupon !== null) ? $coupon : 0;
+        if (pageReload()) {
             $cartService->destroySessionAddress();
-            $multicurrencyData = defaultMulticurrencyData();
-
-            return view('site.order.checkout', compact(
-                'cartService',
-                'selectedTotal',
-                'addresses',
-                'defaultAddresses',
-                'defaultAddress',
-                'tax',
-                'shipping',
-                'shippingIndex',
-                'countries',
-                'coupon',
-                'couponOffer',
-                'multicurrencyData'
-            ));
         }
 
-        return redirect()->route('site.cart');
+        $selectedTotal = Cart::totalPrice('selected');
+        $taxShipping = $cartService->getTaxShipping();
+        $tax = $taxShipping['tax'] ?? 0;
+        $shipping = $taxShipping['shipping'] ?? 0;
+        $shippingIndex = $cartService->getShippingIndex();
+
+        $addresses = [];
+        $defaultAddresses = null;
+        $defaultAddress = null;
+        if (Auth::check()) {
+            $addresses = Address::getAll()->where('user_id', Auth::user()->id);
+            $defaultAddresses = Address::getAll()->where('user_id', Auth::user()->id)->where('is_default', 1)->first();
+            $defaultAddress = $defaultAddresses ? $defaultAddresses->id : null;
+        }
+
+        $countries = Country::getAll();
+        $coupon = isActive('Coupon') ? Cart::getCouponData() : null;
+        $couponOffer = (isActive('Coupon') && $coupon !== null) ? $coupon : 0;
+        $cartService->destroySessionAddress();
+        $multicurrencyData = defaultMulticurrencyData();
+
+        return view('site.order.checkout', compact(
+            'cartService',
+            'selectedTotal',
+            'addresses',
+            'defaultAddresses',
+            'defaultAddress',
+            'tax',
+            'shipping',
+            'shippingIndex',
+            'countries',
+            'coupon',
+            'couponOffer',
+            'multicurrencyData'
+        ));
     }
 
     public function buynow(Request $request)

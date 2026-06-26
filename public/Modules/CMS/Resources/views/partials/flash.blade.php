@@ -2,8 +2,8 @@
     @php
         $flash = miniCollection($component->flash ?? []);
     @endphp
-    <div class="md:w-322p w-full">
-        <div class="relative bg-gray-11 rounded-md pb-0.5">
+    <div class="md:w-322p w-full md:flex md:flex-col md:h-full">
+        <div class="relative bg-gray-11 rounded-md pb-0.5 md:flex-grow md:flex md:flex-col md:h-full">
             @if ($flash->badge_text)
                 <div class="p-4">
                     <p class="text-xs rounded-sm font-medium text-gray-12 text-center px-1.5 py-1 primary-bg-color inline">
@@ -15,7 +15,7 @@
                 <img width="180px" height="160px" src="{{ $flashProduct->getFeaturedImage('medium') }}" alt="{{ __('Image') }}">
             </div>
 
-            <div class="text-center bg-white mx-4 mb-4 mt-8 py-4 rounded">
+            <div class="text-center bg-white mx-4 mb-4 mt-8 py-4 rounded md:mt-auto">
                 <p class="text-lg text-gray-12 mt-2 px-5 dm-regular font-normal">
                     {{ trimWords($flashProduct->name, 30) }}</p>
 

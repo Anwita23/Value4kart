@@ -14,14 +14,14 @@
                             @if ($outOfStock['outOfStockVisibility'] == 1 && !$product->isVariableProduct())
                                 @php $outStock = true @endphp
                                 <p
-                                    class="bg-pinks-2 relative z-20 h-4 text-reds-3 mb-2.5 w-max px-1.5 flex items-center rounded-sm leading-3 roboto-medium font-medium pt-2p text-8 whitespace-nowrap text-11">
+                                    class="theme-blue-bg relative z-20 h-4 text-white mb-2.5 w-max px-1.5 flex items-center rounded-sm leading-3 roboto-medium font-medium pt-2p text-8 whitespace-nowrap text-11">
                                     {{ __('Stock Out') }}
                                 </p>
                             @endif
                             @if (isset($featured) && $outStock == false)
                                 <p
-                                    class="primary-bg-color h-5 w-max mb-2.5 justify-center text-white px-2 flex items-center text-center rounded-sm leading-3 roboto-medium font-medium text-11">
-                                    {{ __('Featured') }}
+                                    class="theme-blue-bg h-5 w-max mb-2.5 justify-center text-white px-2 flex items-center text-center rounded-sm leading-3 roboto-medium font-medium text-11">
+                                    {{ __('FEATURED') }}
                                 </p>
                             @endif
                             @if ($review_average == 5 && $outStock == false)
@@ -38,8 +38,8 @@
                             @endif
                             @if ($offerFlag && !$product->isVariableProduct() && $outStock == false && !$product->isGroupedProduct())
                                 <p
-                                    class="primary-bg-color h-5 text-gray-12 px-2 mb-2.5 justify-center flex items-center rounded-sm leading-3 roboto-medium font-medium text-11 whitespace-nowrap uppercase w-max">
-                                    {{ formatCurrencyAmount($product->getDiscountAmount()) }}% {{ __('off') }}
+                                    class="theme-blue-bg h-5 text-white px-2 mb-2.5 justify-center flex items-center rounded-sm leading-3 roboto-medium font-medium text-11 whitespace-nowrap uppercase w-max">
+                                    {{ formatCurrencyAmount($product->getDiscountAmount()) }}% {{ __('OFF') }}
                                 </p>
                             @endif
                         </div>

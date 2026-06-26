@@ -155,7 +155,7 @@
             </div>
         @endif
         @if ($component->sidebar && $component->sidebar_position == 'right')
-            <div class="w-full md:w-322p md:block">
+            <div class="w-full md:w-322p md:block h-full">
                 <div class="relative h-full dm-sans ">
                     <div class="skeleton-box h-full bg-gray-11 rev-img rounded-md relative">
                         <div class="p-10 flex justify-center items-center h-60">

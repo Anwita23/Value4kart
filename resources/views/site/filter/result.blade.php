@@ -1,3 +1,10 @@
+<style>
+    .theme-blue-bg { background-color: #2563eb !important; }
+    .theme-blue-text { color: #2563eb !important; }
+    .hover\:theme-blue-text:hover { color: #2563eb !important; }
+    .compare-remove.theme-blue-text { color: #2563eb !important; }
+    .remove-wishlist.theme-blue-text { color: #2563eb !important; }
+</style>
 @foreach ($response as $res)
 <div class="flex search-result overflow-hidden">
     @php
@@ -387,17 +394,21 @@
                                 $offerFlag = $product->offerCheck;
                                 $outStock = false;
                             @endphp
-                            <div x-bind:class="{'flex gap-x-4 md:gap-x-30p': layout === 'list',}">
-                                <div style="height: {{ $isEnableProduct['height'] }}px" class="bg-white border border-gray-2 rev-img rounded-md relative product-hover">
-                                    <div x-bind:class="{'w-103p xxs:w-44 sm:w-56 md:w-60 h-full ': layout === 'list','w-full h-full': layout === 'grid'}" class="flex justify-center items-center">
+                             <div x-bind:class="{'flex gap-x-4 md:gap-x-30p': layout === 'list', 'h-full flex flex-col bg-white border border-gray-200 transition duration-300 hover:shadow-md relative group rounded-md': layout === 'grid'}">
+                                 <div style="height: {{ $isEnableProduct['height'] }}px"
+                                     x-bind:class="{
+                                         'bg-white border border-gray-2 rev-img rounded-md relative product-hover': layout === 'list',
+                                         'relative w-full overflow-hidden flex justify-center items-center p-4 rev-img product-hover': layout === 'grid'
+                                     }">
+                                     <div x-bind:class="{'w-103p xxs:w-44 sm:w-56 md:w-60 h-full ': layout === 'list','w-full h-full': layout === 'grid'}" class="flex justify-center items-center">
                                         @if (isset($isEnableProduct['badge']) && $isEnableProduct['badge'] == 1)
-                                            <div class="absolute top-2.5 ltr:left-2.5 rtl:right-2.5">
+                                            <div class="absolute top-2.5 ltr:left-2.5 rtl:right-2.5 flex flex-col items-start gap-1">
                                                 @if($product->is_show_stock_status && $product->stock_status == 'Out Of Stock')
                                                     @php $outStock = true @endphp
-                                                    <p class="bg-pinks-2 relative h-4 z-30 text-reds-3 mb-2.5 px-1.5 flex items-center rounded-sm leading-3 roboto-medium font-medium pt-2p text-8 whitespace-nowrap w-max">{{ __('Out Of Stock') }}</p>
+                                                    <p class="theme-blue-bg relative h-4 z-30 text-white mb-2 px-2 flex items-center rounded-sm leading-3 roboto-medium font-medium text-xs whitespace-nowrap w-max">{{ __('Out Of Stock') }}</p>
                                                 @endif
                                                 @if(isset($product->featured) && $outStock == false)
-                                                    <p class="primary-bg-color relative z-30 h-18p w-max text-white px-2 mb-2.5 flex items-center rounded-sm leading-3 roboto-medium font-medium text-xss">{{ __('Featured') }}</p>
+                                                    <p class="theme-blue-bg relative z-30 h-4 w-max text-white px-2 mb-2 flex items-center rounded-sm leading-3 roboto-medium font-medium text-xs">{{ __('FEATURED') }}</p>
                                                 @endif
                                                 @if($product->review_average == 5 && $outStock == false)
                                                     <div class="flex z-30 relative items-center w-max px-1.5 whitespace-nowrap mb-2.5 bg-green-5 h-18p rounded-sm">
@@ -408,7 +419,7 @@
                                                     </div>
                                                 @endif
                                                 @if($product->offerCheck && $outStock == false)
-                                                    <p class="primary-bg-color z-30 h-4 relative text-gray-12 mb-2.5 px-2 flex items-center rounded-sm leading-3 roboto-medium font-medium text-8 whitespace-nowrap uppercase w-max">{{ formatCurrencyAmount($product->discountPercent) }}% {{ __('off') }}</p>
+                                                    <p class="theme-blue-bg z-30 h-4 relative text-white mb-2 px-2 flex items-center rounded-sm leading-3 roboto-medium font-medium text-xs whitespace-nowrap uppercase w-max">{{ formatCurrencyAmount($product->discountPercent) }}% {{ __('OFF') }}</p>
                                                 @endif
                                                 @if($product->is_show_stock_quantity && $outStock == false)
                                                     <p class="primary-bg-color z-30 h-4 relative text-gray-12 mb-2.5 px-2 flex items-center rounded-sm leading-3 roboto-medium font-medium text-8 whitespace-nowrap w-max">{{ __(':x left', ['x' => $product->stock_quantity]) }}</p>
@@ -417,9 +428,53 @@
                                         @endif
                                         <a href="{{ route('site.productDetails', ['slug' => $product->slug]) }}" class="w-full h-full z-10"><img class="h-full w-full rounded-md object-cover"  src="{{ $product->featured_image_on_settings }}"
                                               alt="{{ __('Image') }}"></a>
-                                    </div>
+                                         
+                                         {{-- Hover Actions Bar for Grid View --}}
+                                         <div x-bind:class="{'hidden': layout === 'list'}" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+                                             <div class="flex items-center bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
+                                                 {{-- Quick View --}}
+                                                 @if (isset($isEnableProduct['quick_view']) && $isEnableProduct['quick_view'] == 1 && $product->type != 'Grouped Product')
+                                                     <button class="open-view-modal p-2 text-gray-500 hover:theme-blue-text transition-colors tooltip" data-itemCode="{{ $product->code }}" title="{{ __('Quick View') }}">
+                                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                             <circle cx="12" cy="12" r="3"></circle>
+                                                         </svg>
+                                                     </button>
+                                                 @elseif(isset($isEnableProduct['quick_view']) && $isEnableProduct['quick_view'] == 1)
+                                                     <a href="{{ route('site.productDetails', ['slug' => $product->slug]) }}" class="p-2 text-gray-500 hover:theme-blue-text transition-colors tooltip" title="{{ __('View') }}">
+                                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                             <circle cx="12" cy="12" r="3"></circle>
+                                                         </svg>
+                                                     </a>
+                                                 @endif
 
-                                    <div class="w-full h-full hover-icon absolute top-0">
+                                                 {{-- Compare --}}
+                                                 @if (preference('compare') && isset($isEnableProduct['compare']) && $isEnableProduct['compare'] == 1)
+                                                     <div data-itemId="{{ $product->id }}" class="p-2 text-gray-500 hover:theme-blue-text transition-colors cursor-pointer border-l border-r border-gray-100 {{ $product->is_compared ? 'compare-remove theme-blue-text' : 'add-to-compare' }}" title="{{ __('Compare') }}">
+                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                             <path d="M16 3h5v5"></path>
+                                                             <path d="M4 20h17"></path>
+                                                             <path d="M16 21v-2l5-3-5-3v-2"></path>
+                                                             <path d="M4 4h17"></path>
+                                                             <path d="M8 3v2L3 8l5 3v2"></path>
+                                                         </svg>
+                                                     </div>
+                                                 @endif
+
+                                                 {{-- Wishlist --}}
+                                                 @if (preference('wishlist') && isset($isEnableProduct['wishlist']) && $isEnableProduct['wishlist'] == 1)
+                                                     <div data-id="{{ $product->id }}" class="wishlist p-2 text-gray-500 hover:theme-blue-text transition-colors cursor-pointer {{ $product->is_wishlisted ? 'remove-wishlist theme-blue-text' : 'add-wishlist' }}" title="{{ __('Wishlist') }}">
+                                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="{{ $product->is_wishlisted ? 'currentColor' : 'none' }}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                                         </svg>
+                                                     </div>
+                                                 @endif
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                    <div class="w-full h-full hover-icon absolute top-0" x-bind:class="{'hidden': layout === 'grid'}">
                                         <div class="w-full h-full flex justify-end cursor-pointer pt-15p ltr:pr-5 rtl:pl-5">
                                             <div slot="icon" class="relative hidden md:block">
                                                 @doAction('before_filter_product_card_actions', $product)
@@ -465,11 +520,10 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div x-bind:class="{'text-left flex flex-col justify-center': layout === 'list', 'text-center mt-3': layout === 'grid' }">
-                                    <p x-bind:class="{'text-11 xxs:text-15 sm:text-15 md:text-13 rtl:text-right': layout === 'list', 'text-11 sm:text-13 ': layout === 'grid' }" class="text-11 md:text-13 text-gray-10 roboto-medium">{{ $product->categories[0] ?? null }}</p>
-                                    <a href="{{ route('site.productDetails', ['slug' => $product->slug]) }}"><p x-bind:class="{'px-4 ': layout === 'grid', 'sm:text-lg rtl:text-right': layout === 'list'}" class="text-13 md:text-base text-gray-12 dm-sans font-medium mt-0.5 line-clamp ltr:mr-2 rtl:ml-2">{{ $product->name }}</p>
+                                <div x-bind:class="{'text-left flex flex-col justify-center': layout === 'list', 'text-left mt-3 flex-grow flex flex-col': layout === 'grid' }">
+                                    <p x-bind:class="{'text-11 xxs:text-15 sm:text-15 md:text-13 rtl:text-right': layout === 'list', 'hidden': layout === 'grid' }" class="text-11 md:text-13 text-gray-10 roboto-medium">{{ $product->categories[0] ?? null }}</p>
+                                    <a href="{{ route('site.productDetails', ['slug' => $product->slug]) }}"><p x-bind:class="{'px-4 text-sm text-gray-800 font-semibold leading-5 line-clamp hover:theme-blue-text transition-colors block overflow-hidden mb-2': layout === 'grid', 'sm:text-lg rtl:text-right text-13 md:text-base dm-sans mt-0.5 line-clamp ltr:mr-2 rtl:ml-2': layout === 'list'}" class="text-gray-12 font-medium">{{ $product->name }}</p>
                                     </a>
-                                    
                                     @if (!empty($isEnableProduct['price']) && $isEnableProduct['price'] == 1)
                                         @php
                                             $isSimpleOrExternal = in_array($product->type, [\App\Enums\ProductType::$Simple, \App\Enums\ProductType::$External]);
@@ -477,42 +531,37 @@
                                             $originalPrice = multiCurrencyFormatNumber($product->prices[1] ?? 0);
                                             $hasDiscount = ($product->prices[0] ?? 0) != ($product->prices[1] ?? 0);
                                         @endphp
-
-                                        <p class="text-sm md:text-20 text-gray-12 dm-bold mt-1.5" 
-                                        x-bind:class="{'mt-5p sm:text-xl rtl:text-right': layout === 'list'}">
-                                            {{ $price }}
-                                            
+                                        <div class="flex items-center gap-2 mb-2" x-bind:class="{'px-4': layout === 'grid', 'mt-5p sm:text-xl rtl:text-right text-sm md:text-20 text-gray-12 dm-bold mt-1.5': layout === 'list'}">
                                             @if ($hasDiscount)
                                                 @if ($isSimpleOrExternal)
-                                                    <span class="text-lg line-through text-gray-10 pl-1 mt-0.5">{{ $originalPrice }}</span>
+                                                    <span class="theme-blue-text font-bold text-base">{{ $price }}</span>
+                                                    <span class="text-gray-400 text-sm line-through decoration-gray-400">{{ $originalPrice }}</span>
                                                 @else
-                                                    - {{ $originalPrice }}
+                                                    <span class="theme-blue-text font-bold text-base">{{ $price }} - {{ $originalPrice }}</span>
                                                 @endif
+                                            @else
+                                                <span class="theme-blue-text font-bold text-base">{{ $price }}</span>
                                             @endif
-                                        </p>
-                                    @endif                                    
+                                        </div>
+                                    @endif
                                     
                                     @if (isset($isEnableProduct['review']) && $isEnableProduct['review'] == 1)
-                                        <div class="item-rating mt-1p">
-                                            <div class="self-top">
-                                                <ul class="flex gap-2p items-center md:gap-5p" x-bind:class="{'justify-start mt-1.5': layout === 'list', 'justify-center': layout === 'grid' }">
-                                                    @for($i = 1; $i <= 5; $i++)
-                                                     <li class="mt-1 w-18p md:w-4">
-                                                        @if ($product->review_average >= $i)
-                                                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M8.5 0L10.4084 5.87336L16.584 5.87336L11.5878 9.50329L13.4962 15.3766L8.5 11.7467L3.50383 15.3766L5.41219 9.50329L0.416019 5.87336L6.59163 5.87336L8.5 0Z" fill="var(--primary-color)"/>
-                                                            </svg>
-                                                        @else
-                                                            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" text-gray-300">
-                                                                <path d="M8.5 0L10.4084 5.87336L16.584 5.87336L11.5878 9.50329L13.4962 15.3766L8.5 11.7467L3.50383 15.3766L5.41219 9.50329L0.416019 5.87336L6.59163 5.87336L8.5 0Z" fill="currentColor"/>
-                                                            </svg>
-                                                        @endif
-                                                    </li>
-                                                    @endfor
-                                                    <li class="mt-1 text-gray-10 text-13 roboto-medium rtl:mr-2">
-                                                        ({{ !empty($product->review_average) ? $product->review_average : 0 }})
-                                                    </li>
-                                                </ul>
+                                        <div class="flex flex-wrap items-center justify-between" x-bind:class="{'justify-start mt-1.5': layout === 'list', 'px-4 mb-4 mt-auto': layout === 'grid' }">
+                                            <div class="flex text-[#ffb321] gap-0 items-center">
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if ($product->review_average >= $i)
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ddd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                                    @endif
+                                                @endfor
+                                                <span class="text-gray-400 text-xs ml-1">({{ !empty($product->review_average) ? $product->review_average : 0 }})</span>
+                                            </div>
+                                            
+                                            <div x-bind:class="{'hidden': layout === 'list'}" class="ml-2">
+                                                @if($product->type != \App\Enums\ProductType::$Variable && $outStock == false)
+                                                    <span class="theme-blue-text text-xs font-medium">{{ __('In Stock') }}</span>
+                                                @endif
                                             </div>
                                         </div>
                                     @endif
@@ -551,6 +600,30 @@
                                             </div>
                                         @endif
                                     @endif
+
+                                    <div x-bind:class="{'hidden': layout === 'list'}" class="mt-auto w-full px-4 mb-4">
+                                        @if($product->type == \App\Enums\ProductType::$Simple && $outStock == false && isset($isEnableProduct['add_to_cart']) && $isEnableProduct['add_to_cart'] == 1)
+                                            <button class="add-to-cart w-full h-10 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 flex items-center justify-between rounded transition-colors" data-itemCode={{ $product->code }}>
+                                                <span class="text-sm">{{ __('Add') }}</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                </svg>
+                                            </button>
+                                        @elseif($outStock == true)
+                                            <button class="w-full h-10 bg-gray-100 text-gray-400 font-medium px-4 flex items-center justify-center rounded cursor-not-allowed">
+                                                <span class="text-sm">{{ __('Out Of Stock') }}</span>
+                                            </button>
+                                        @else
+                                            <a href="{{ route('site.productDetails', ['slug' => $product->slug]) }}" class="w-full h-10 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium px-4 flex items-center justify-between rounded transition-colors">
+                                                <span class="text-sm">{{ __('Add') }}</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                </svg>
+                                            </a>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         @endforeach

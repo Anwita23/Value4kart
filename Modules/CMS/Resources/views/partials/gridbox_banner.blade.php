@@ -1,8 +1,8 @@
 @php
     $banner = miniCollection($component->slide ?? []);
 @endphp
-<div class="md:w-[335px] lg:w-322p w-full pb-2">
-    <div class="relative h-600p w-full ">
+<div class="md:w-[335px] lg:w-322p w-full pb-2 md:flex md:flex-col md:h-full">
+    <div class="relative h-[300px] md:h-full w-full md:flex-grow">
         @isset($banner->image)
             <img class="w-full h-full object-cover rounded-md"
                 src="{{ Storage::disk()->url('uploads') . DIRECTORY_SEPARATOR . $banner->image }}" alt="{{ __('Image') }}">
