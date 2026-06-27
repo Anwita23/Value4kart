@@ -430,7 +430,7 @@
                                               alt="{{ __('Image') }}"></a>
                                          
                                          {{-- Hover Actions Bar for Grid View --}}
-                                         <div x-bind:class="{'hidden': layout === 'list'}" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30">
+                                         <div x-bind:class="{'hidden': layout === 'list'}" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
                                              <div class="flex items-center bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
                                                  {{-- Quick View --}}
                                                  @if (isset($isEnableProduct['quick_view']) && $isEnableProduct['quick_view'] == 1 && $product->type != 'Grouped Product')

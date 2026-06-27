@@ -636,23 +636,39 @@ class OrderController extends Controller
                 if (isActive('Affiliate')) {
                     \Modules\Affiliate\Entities\ReferralPurchase::referralPurchaseUpdate($order->id, $orderStatusInfo);
                 }
+            } elseif ($log->status == 'pending' && $log->gateway == 'CashOnDelivery') {
+                // Cash on Delivery: order confirmed, payment collected on delivery
+                $order->order_status_id = $orderStatusInfo->id;
+
+                foreach ($order->orderDetails as $detail) {
+                    (new OrderDetail())->updateOrder(['order_status_id' => $orderStatusInfo->id], $detail->id);
+                }
+
+                if (isActive('Affiliate')) {
+                    \Modules\Affiliate\Entities\ReferralPurchase::referralPurchaseUpdate($order->id, $orderStatusInfo);
+                }
             }
 
             $order->checkOrderStatus();
             $order->save();
 
-            // Send invoice to user and vendor
-            if ($order->user_id) {
-                User::find($order->user_id)->notify(new OrderInvoiceNotification($order));
-            }
+            // Send invoice to user and vendor (wrapped in try-catch to prevent SMTP hangs)
+            try {
+                if ($order->user_id) {
+                    User::find($order->user_id)->notify(new OrderInvoiceNotification($order));
+                }
 
-            foreach ($order->orderDetails->groupBy('vendor_id') as $key => $detail) {
-                $detail->first()?->vendor?->notify(new VendorOrderInvoiceNotification($order));
-            }
+                foreach ($order->orderDetails->groupBy('vendor_id') as $key => $detail) {
+                    $detail->first()?->vendor?->notify(new VendorOrderInvoiceNotification($order));
+                }
 
-            // send referral details to admin
-            if (isActive('Affiliate') && preference('refer_details') == 1) {
-                (new ReferralMailService())->send($order);
+                // send referral details to admin
+                if (isActive('Affiliate') && preference('refer_details') == 1) {
+                    (new ReferralMailService())->send($order);
+                }
+            } catch (\Exception $mailException) {
+                // Log mail failure but do not block the order confirmation
+                \Illuminate\Support\Facades\Log::warning('Order notification email failed: ' . $mailException->getMessage(), ['order_id' => $order->id]);
             }
 
             return redirect()

@@ -241,6 +241,15 @@
                                         ['label' => __('Your Wishlist'), 'link' => route('site.wishlist')],
                                         ['label' => __('Search'), 'link' => route('site.productSearch') . '?categories=&keyword=&brands=&attributes=&price_range=&rating=&sort_by=Price%20Low%20to%20High&showing=12'],
                                     ];
+                                } elseif ($key == 'useful_links') {
+                                    $widgetData = array_filter($widgetData, function($widget) {
+                                        $label = $widget['label'] ?? '';
+                                        $link = $widget['link'] ?? '';
+                                        if (stripos($label, 'Track Order') !== false || stripos($label, __('Track Order')) !== false || stripos($link, 'track-order') !== false) {
+                                            return false;
+                                        }
+                                        return true;
+                                    });
                                 }
                             @endphp
                             <div class="md:w-1/5 grid justify-center order-{{ $value['sort'] }}">
