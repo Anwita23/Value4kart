@@ -1,26 +1,21 @@
 "use strict";
 $(function () {
     var lastVisitedUrl;
-
-    $(".payment-loader").addClass("hidden");
+    $(".payment-loader").removeClass("active");
 
     window.addEventListener("pagehide", function (event) {
-        $(".payment-loader").removeClass("hidden");
+        $(".payment-loader").addClass("active");
     });
 
     window.onbeforeunload = function () {
-        $(".payment-loader").removeClass("hidden");
-    };
-
-    window.onpageshow = function (event) {
-        if (!event.persisted) {
-            $(".payment-loader").removeClass("hidden");
-        }
+        $(".payment-loader").addClass("active");
     };
 
     window.onpageshow = function (event) {
         if (event.persisted) {
-            $(".payment-loader").addClass("hidden");
+            $(".payment-loader").removeClass("active");
+        } else {
+            $(".payment-loader").removeClass("active");
         }
     };
 
