@@ -303,7 +303,13 @@ class CustomFieldService
      */
     private static function doActionKeys(string $path): array
     {
-        $fileContent = file_get_contents($path);
+        $absolutePath = base_path($path);
+
+        if (!file_exists($absolutePath)) {
+            return [];
+        }
+
+        $fileContent = file_get_contents($absolutePath);
 
         if (preg_match_all('/@doAction\(\'([^\']+)\'/', $fileContent, $matches)) {
             return $matches[1];

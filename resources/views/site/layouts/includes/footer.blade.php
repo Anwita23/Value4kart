@@ -227,9 +227,14 @@
                 @endif
 
                 @if (isset($footer['main']))
-                    @foreach ($footer['main'] as $key => $value)
-                        @if (in_array($key, ['useful_links', 'pages', 'categories']) && $value['status'])
+                    @php
+                        $orderedKeys = ['categories', 'useful_links', 'pages'];
+                        $sortOrder = 2;
+                    @endphp
+                    @foreach ($orderedKeys as $key)
+                        @if (isset($footer['main'][$key]) && isset($footer['main'][$key]['status']) && $footer['main'][$key]['status'])
                             @php
+                                $value = $footer['main'][$key];
                                 $widgetData = $value['data'] ?? [];
                                 $title = $value['title'];
                                 if ($key == 'pages') {
@@ -252,7 +257,7 @@
                                     });
                                 }
                             @endphp
-                            <div class="md:w-1/5 grid justify-center order-{{ $value['sort'] }}">
+                            <div class="md:w-1/5 grid justify-center order-{{ $sortOrder++ }}">
                                 <ul class="text-sm font-medium roboto-regular leading-8 break-all">
                                     <p class="mb-4 font-medium text-base dm-sans break-all">
                                         {!! $title !!}
