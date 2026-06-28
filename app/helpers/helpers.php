@@ -83,13 +83,13 @@ function getUserProfilePicture($userId = null, $thumbnail = 1)
 {
     $image = Cache::get(config('cache.prefix') . '-user-' . $thumbnail . '-avatar-' . $userId);
     if (empty($image)) {
-        $image = url('public/dist/img/avatar.jpg');
+        $image = asset('dist/img/avatar.jpg');
         if (! empty($userId)) {
             $userPic = (new File())->getFiles('USER', $userId);
             if (isset($userPic[0])) {
                 $path = $thumbnail ? 'uploads/user/thumbnail/' : 'uploads/user/';
                 if (isFileExist('public/' . $userPic[0]->file_name)) {
-                    $image = \Storage::disk()->url('public/' . $path . $userPic[0]->file_name);
+                    $image = asset($path . $userPic[0]->file_name);
                 }
             }
         }
@@ -114,18 +114,18 @@ function getImageData($id = null, $type = null, $name = null, $path = null, $isC
 {
     $image = Cache::get(config('cache.prefix') . '-' . strtolower($type) . '-' . $name . '-' . $id);
     if (empty($image)) {
-        $image = url('public/dist/img/default-image.png');
+        $image = asset('dist/img/default-image.png');
         if (! empty($id)) {
             $pic = (new File())->getFiles($type, $id);
             if ($allImage == true) {
                 $image = [];
                 foreach ($pic as $p) {
-                    $image[] = url('public/' . $path . $p->file_name);
+                    $image[] = asset($path . $p->file_name);
                 }
             } else {
                 if (isset($pic[0])) {
-                    if (file_exists(url('/public/' . $path . $pic[0]->file_name))) {
-                        $image = url('public/' . $path . $pic[0]->file_name);
+                    if (file_exists(public_path($path . $pic[0]->file_name))) {
+                        $image = asset($path . $pic[0]->file_name);
                     }
                 }
             }
@@ -441,19 +441,19 @@ if (! function_exists('defaultRoles')) {
 function defaultImage(string $type)
 {
     $defaultImages = [
-        'products' => 'public/dist/img/default_product.jpg',
-        'users' => 'public/dist/img/avatarUser.png',
-        'blogs' => 'public/dist/img/blog.png',
-        'small_product' => 'public/dist/img/small_product.png',
-        'medium_product' => 'public/dist/img/medium_product.png',
-        'large_product' => 'public/dist/img/large_product.png',
+        'products' => 'dist/img/default_product.jpg',
+        'users' => 'dist/img/avatarUser.png',
+        'blogs' => 'dist/img/blog.png',
+        'small_product' => 'dist/img/small_product.png',
+        'medium_product' => 'dist/img/medium_product.png',
+        'large_product' => 'dist/img/large_product.png',
     ];
 
     if (array_key_exists($type, $defaultImages)) {
         return $defaultImages[$type];
     }
 
-    return 'public/dist/img/default-image.png';
+    return 'dist/img/default-image.png';
 }
 
 /**
@@ -1039,7 +1039,7 @@ if (! function_exists('pathToUrl')) {
      */
     function pathToUrl($path = '', $uploads = true)
     {
-        return \Storage::disk()->url($uploads ? 'public/uploads' : 'public') . DIRECTORY_SEPARATOR . $path;
+        return \Storage::disk()->url($uploads ? 'uploads' : 'public') . DIRECTORY_SEPARATOR . $path;
     }
 }
 

@@ -39,13 +39,13 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script type="text/javascript">
         'use strict';
         var startDate = @json($from ?? 'undefined');
         var endDate   = @json($to ?? 'undefined');
     </script>
-    <script src="{{ asset('public/dist/js/custom/otp-logs.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/otp-logs.min.js') }}"></script>
 @endsection
 

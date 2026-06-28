@@ -110,7 +110,7 @@
     </div>
 </div>
 @if($includeScript)
-    <script src="{{ asset('public/dist/js/custom/delete-modal.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/delete-modal.min.js') }}"></script>
 @endif
 @if($includeBatchDelete)
     @include('admin.layouts.includes.batch-delete-modal')

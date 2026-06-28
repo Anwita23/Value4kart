@@ -51,7 +51,7 @@ class ShippingProvider extends Model
         $image = defaultImage('shipping_providers');
 
         if (! empty($shippingImage?->fileUrl) && file_exists(public_path('uploads/sizes/' . $size . '/' . $shippingImage?->fileUrl))) {
-            $image = asset('public/uploads/sizes/' . $size . '/' . $shippingImage?->fileUrl);
+            $image = asset('uploads/sizes/' . $size . '/' . $shippingImage?->fileUrl);
         }
 
         return asset($image);

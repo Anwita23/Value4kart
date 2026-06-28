@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Transactions'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/vendor-responsiveness.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/vendor-responsiveness.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -71,8 +71,8 @@
         var csv = "{{ auth()->user()?->hasPermission('App\Http\Controllers\Vendor\VendorTransactionController@csv') ? '1' : '0' }}";
         var userUrl = "{{ route('find.users.ajax') }}";
     </script>
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/transaction.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/transaction.min.js') }}"></script>
 @endsection

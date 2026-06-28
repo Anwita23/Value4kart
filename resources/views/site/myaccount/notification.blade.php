@@ -34,7 +34,7 @@
                             </div>
                             <div class="flex justify-end items-center gap-3">
                                 <a href="javascript:void(0)" data-id="{{ $notification->id }}" class="action-icon marked-action">
-                                    <img src="{{ asset('public/frontend/svg/' . ($notification->read_at ? 'icon-eye' : 'icon-eye-off') . '.svg') }}" alt="read svg">   
+                                    <img src="{{ asset('frontend/svg/' . ($notification->read_at ? 'icon-eye' : 'icon-eye-off') . '.svg') }}" alt="read svg">   
                                 </a>
                                 <a href="javascript:void(0)" data-url="{{ route('notifications.destroy', $notification->id) }}" data-method="delete" class="open-delete-modal">
                                     <svg class="open-modal cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="16" height="17"

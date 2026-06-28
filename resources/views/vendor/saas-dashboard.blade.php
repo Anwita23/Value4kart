@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Dashboard'))
 @section('css')
-<link rel="stylesheet" href="{{ asset('public/dist/css/saas-dashboard.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/saas-dashboard.min.css') }}">
 @endsection
 @section('content')
 <div class="va-page" data-analytics-storage-key="{{ 'vendor_analytics_' . ($variant ?? 12) . '_state' }}">
@@ -324,5 +324,5 @@ $subscription = $subscription ?? [];
 <script>
     const defaultCurrency = "{{ $defaultCurrency ?? '$' }}";    
 </script>
-<script src="{{ asset('public/dist/js/custom/saas-dashboard.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/saas-dashboard.min.js') }}"></script>
 @endsection

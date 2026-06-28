@@ -64,8 +64,8 @@
     </div>
 @endsection
 @section('js')
-<script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-<script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+<script src="{{ asset('dist/js/moment.min.js') }}"></script>
+<script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
 <script>
     'use strict';
     var startDate = "{!! isset($from) ? $from : 'undefined' !!}";

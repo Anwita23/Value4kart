@@ -2,7 +2,7 @@
 @section('page_title', __('Create :x', ['x' => __('Staff')]))
 @section('css')
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/user-list.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -165,6 +165,6 @@
         var currentUrl = "{!! url()->full() !!}";
         var loginNeeded = "{!! session('loginRequired') ? 1 : 0 !!}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/user.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/user.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 @endsection

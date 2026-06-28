@@ -33,7 +33,7 @@
     var pdf = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\Vendor\ShopController@pdf')) ? '1' : '0' }}";
     var csv = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\Vendor\ShopController@csv')) ? '1' : '0' }}";
 </script>
-<script src="{{ asset('public/dist/js/custom/shops.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/shops.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection
 

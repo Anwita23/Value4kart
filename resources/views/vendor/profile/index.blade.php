@@ -1,11 +1,11 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Vendor Profile'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/lightbox/css/lightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/custom/vendor-profile.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/custom/vendor-profile.min.css') }}">
 @endsection
 
 @section('content')
@@ -576,12 +576,12 @@
         };
     </script>
     
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js?v=5.0.0') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js?v=5.0.0') }}"></script>
 
-    <script src="{{ asset('public/dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/user.min.js?v=3.3') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/vendor-profile-email-phone-change.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/user.min.js?v=3.3') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/vendor-profile-email-phone-change.min.js') }}"></script>
 @endsection

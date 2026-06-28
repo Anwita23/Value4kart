@@ -49,7 +49,7 @@ $mimeTypes = [
 ];
 
 // Build the real filesystem path from the project root
-$rootDir    = __DIR__;
+$rootDir    = __DIR__ . '/public';
 $filePath   = $rootDir . $uri;
 
 // If the URI points to a real file (not a directory), serve it as static

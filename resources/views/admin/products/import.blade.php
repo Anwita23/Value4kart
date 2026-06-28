@@ -555,5 +555,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/product.min.js?v=5.0.1') }}"></script>
+    <script src="{{ asset('dist/js/custom/product.min.js?v=5.0.1') }}"></script>
 @endsection

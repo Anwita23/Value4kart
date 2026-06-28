@@ -922,7 +922,15 @@ img {
 .slideshow-container {
     position: relative;
     height: 421px;
+    min-height: 250px;
     z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .slideshow-container {
+        height: auto;
+        min-height: 200px;
+    }
 }
 
 /* Next & previous buttons */
@@ -1086,6 +1094,15 @@ img {
 .hero-slide-img {
     height: 421px;
     width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-slide-img {
+        height: auto;
+        min-height: 200px;
+        max-height: 300px;
+    }
 }
 
 /* #################### Hero Slider End ################ */
@@ -3744,6 +3761,9 @@ html[dir="rtl"] .first-dropdown-li:hover > .first-dropdown {
     z-index: 9999;
     min-width: 200px;
 }
+.first-dropdown li:hover > .child-dropdown {
+    display: block;
+}
 html[dir="rtl"] .child-dropdown {
     float: right;
     left: unset;
@@ -4554,4 +4574,20 @@ html[dir="rtl"] .first-dropdown.horizontal-dropdown > li:last-child {
 
 .first-dropdown.horizontal-dropdown > li .menuss-hover:hover {
     margin: 0 !important;
+}
+
+/* Child dropdown within horizontal dropdown */
+.first-dropdown.horizontal-dropdown > li .child-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    margin-left: 0;
+    margin-top: 0;
+}
+
+html[dir="rtl"] .first-dropdown.horizontal-dropdown > li .child-dropdown {
+    left: auto;
+    right: 0;
+    margin-right: 0;
 }

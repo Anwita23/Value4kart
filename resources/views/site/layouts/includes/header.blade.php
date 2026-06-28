@@ -18,64 +18,27 @@
             @if (isset($header['main']['show_searchbar']) && $header['main']['show_searchbar'] == 1)
                 <div class="md:w-46% w-full {{ isset($header['main']['show_logo']) && $header['main']['show_logo'] == 1 ? '  header-searchbar-margin ml-32' : '3xl:ml-300p lg:ml-60 md:ml-48' }}">
                     <form method="GET" action="{{ route('site.productSearch','') }}">
-                        <div class="relative rounded input-width border search-border search-placeholder bg-white mt-2">
-                            <input type="search" name="keyword" placeholder="{{ __('Type your product name..') }}" value="{{ $searchKeyword ?? null }}" id="itemSearch" class="bg-transparent h-10 w-full text-sm focus:outline-none ltr:pl-12 ltr:pr-10 rtl:pr-12 rtl:pl-10"/>
-                            <div class="absolute text-left w-full custom-design-container bg-white shadow-xl mt-1 hidden">
-                                <div class="loading-dots absolute mt-1.5">
-                                    <div class="loading-dots--dot"></div>
-                                    <div class="loading-dots--dot"></div>
-                                    <div class="loading-dots--dot"></div>
-                                </div>
-                                <div class="parent-search-section bg-white shadow-xl empty-contnet h-[200px]">
-                                    {{-- Emty screen before render--}}
-                                </div>
-                                <div class="parent-search-section bg-white empty-search hidden h-[200px]">
-                                    <p class="py-2 text-[16px] text-gray-12 font-medium line-clamp-1 text-center mt-2"> {{ __("Sorry, nothing found for") }} "<strong class="not-found-content"></strong>" </p>
-                                </div>
-                                <div class="parent-search-section hidden">
-                                    <div class="px-2 py-1 bg-gray-11 text-[10px] leading-[15px] uppercase text-right text-muted">{{ __("Popular Search") }}</div>
-                                    <ul class="flex flex-col gap-2 py-2" id="popular_suggestions_list">
-                                        {{-- suggestion loop here --}}
-                                    </ul>
-                                </div>
-                                <div class="parent-search-section hidden">
-                                    <div class="px-2 py-1 bg-gray-11 text-[10px] uppercase text-right text-muted">{{ __("Categories") }}</div>
-                                    <ul class="flex flex-col gap-2 py-2" id="category_suggestion_list">
-                                        {{-- Categories come from ajax here --}}
-                                    </ul>
-                                </div>
-                                <div class="parent-search-section hidden">
-                                    <div class="px-2 py-1 bg-gray-11 text-[10px] leading-[15px] uppercase text-right text-muted">{{ __("Products") }}</div>
-                                    <ul class="flex flex-col py-2" id="product_search_list">
-                                        {{-- Procducts come from ajax here --}}
-                                    </ul>
-                                </div>
-                                <div class="parent-search-section hidden">
-                                    <div class="px-2 py-1 bg-gray-11 text-[10px] leading-[15px] uppercase text-right text-muted">{{ __("Seller/Vendor") }}</div>
-                                    <ul class="flex flex-col py-2" id="shop_search_list">
-                                        {{-- Shops come from ajax here --}}
-                                    </ul>
-                                </div>
+                        <div class="new-header-search-bar" style="display: flex !important; flex-direction: row !important; align-items: center; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); overflow: hidden; height: 48px; width: 100%;">
+                            <!-- Location Section -->
+                            <div class="new-header-location" style="display: flex !important; flex-direction: row !important; align-items: center; padding: 0 16px; background: #f5f5f5; height: 100%; border-right: 1px solid #e5e5e5; cursor: pointer; min-width: 160px; flex-shrink: 0;">
+                                <svg class="location-icon" style="flex-shrink: 0; margin-right: 8px;" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2C11.7614 2 14 4.23858 14 7C14 10.5 9 16 9 16C9 16 4 10.5 4 7C4 4.23858 6.23858 2 9 2ZM9 9C10.1046 9 11 8.10457 11 7C11 5.89543 10.1046 5 9 5C7.89543 5 7 5.89543 7 7C7 8.10457 7.89543 9 9 9Z" fill="#898989"/>
+                                </svg>
+                                <span class="location-text" style="color: #1a56db; font-size: 14px; font-weight: 500; margin-right: 8px; white-space: nowrap;">Your Location</span>
+                                <svg class="dropdown-arrow" style="flex-shrink: 0;" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L5 5L9 1" stroke="#898989" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <button type="submit" class="absolute ltr:left-0 ltr:ml-3 ltr:pr-2 ltr:border-r rtl:right-0 rtl:mr-3 rtl:pl-2 rtl:border-l -top-1 mt-3 border-gray-300 h-6 search-btn">
-                                <svg class="h-4 w-4 fill-current text-gray-500" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C13.3137 2 16 4.68629 16 8C16 11.3137 13.3137 14 10 14C6.68629 14 4 11.3137 4 8C4 4.68629 6.68629 2 10 2ZM18 8C18 3.58172 14.4183 0 10 0C5.58172 0 2 3.58172 2 8C2 12.4183 5.58172 16 10 16C14.4183 16 18 12.4183 18 8Z" fill="#2C2C2C"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.70711 13.2929C4.31658 12.9024 3.68342 12.9024 3.29289 13.2929L0.292893 16.2929C-0.0976315 16.6834 -0.0976315 17.3166 0.292893 17.7071C0.683417 18.0976 1.31658 18.0976 1.70711 17.7071L4.70711 14.7071C5.09763 14.3166 5.09763 13.6834 4.70711 13.2929Z" fill="#2C2C2C"/>
-                                </svg>
-                            </button>
-                            <button type="submit" class="absolute ltr:right-0 ltr:ml-3 ltr:pr-2 rtl:left-0 rtl:mr-3 rtl:pl-2 -top-1 mt-3 h-6 search-btn">
-                                <svg class="h-4 w-4 fill-current text-gray-500" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 9C2.44772 9 2 8.55228 2 8L2 1C2 0.447716 2.44771 -3.91405e-08 3 -8.74228e-08C3.55228 -1.35705e-07 4 0.447716 4 1L4 8C4 8.55228 3.55228 9 3 9Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5C8.44772 5 8 4.55228 8 4L8 1C8 0.447715 8.44771 -9.13278e-08 9 -2.03986e-07C9.55228 -3.16645e-07 10 0.447715 10 1L10 4C10 4.55228 9.55228 5 9 5Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 16C2.44772 16 2 15.5523 2 15L2 12C2 11.4477 2.44771 11 3 11C3.55228 11 4 11.4477 4 12L4 15C4 15.5523 3.55228 16 3 16Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 16C14.4477 16 14 15.5523 14 15L14 13C14 12.4477 14.4477 12 15 12C15.5523 12 16 12.4477 16 13L16 15C16 15.5523 15.5523 16 15 16Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 16C8.44772 16 8 15.5523 8 15L8 8C8 7.44772 8.44771 7 9 7C9.55228 7 10 7.44772 10 8L10 15C10 15.5523 9.55228 16 9 16Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3L11 3C11.5523 3 12 3.44772 12 4C12 4.55228 11.5523 5 11 5L7 5C6.44772 5 6 4.55228 6 4Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 11.4477 0.447715 11 1 11L5 11C5.55228 11 6 11.4477 6 12C6 12.5523 5.55228 13 5 13L1 13C0.447715 13 0 12.5523 0 12Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13C12 12.4477 12.4477 12 13 12L17 12C17.5523 12 18 12.4477 18 13C18 13.5523 17.5523 14 17 14L13 14C12.4477 14 12 13.5523 12 13Z" fill="#898989"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10C14.4477 10 14 9.55228 14 9L14 1C14 0.447715 14.4477 -3.42479e-08 15 -7.64949e-08C15.5523 -1.18742e-07 16 0.447715 16 1L16 9C16 9.55228 15.5523 10 15 10Z" fill="#898989"/>
-                                </svg>
-                            </button>
+
+                            <!-- Search Input Section -->
+                            <div class="new-header-search-input-wrapper" style="display: flex !important; flex-direction: row !important; align-items: center; flex: 1; height: 100%; position: relative; min-width: 0;">
+                                <input type="search" name="keyword" placeholder="I'm searching for..." value="{{ $searchKeyword ?? null }}" id="itemSearch" class="new-header-search-input" style="flex: 1; height: 100%; border: none; outline: none; padding: 0 16px; font-size: 14px; color: #2c2c2c; background: transparent; min-width: 0;"/>
+                                <button type="submit" class="new-header-search-button" style="display: flex !important; flex-direction: row !important; align-items: center; justify-content: center; width: 52px; height: 100%; background: #FCCA19; border: none; border-radius: 0 12px 12px 0; cursor: pointer; flex-shrink: 0;">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.66667 2C5.01873 2 2 5.01873 2 8.66667C2 12.3146 5.01873 15.3333 8.66667 15.3333C10.3755 15.3333 11.918 14.6416 13.0247 13.5247L17.7071 18.2071C18.0976 18.5976 18.7308 18.5976 19.1213 18.2071C19.5118 17.8166 19.5118 17.1834 19.1213 16.7929L14.4389 12.1105C15.5558 11.0038 16.2475 9.46129 16.2475 7.75242C16.2475 4.10448 13.2288 1.08575 9.58083 1.08575H8.66667V2ZM4.16667 8.66667C4.16667 6.13783 6.13783 4.16667 8.66667 4.16667C11.1955 4.16667 13.1667 6.13783 13.1667 8.66667C13.1667 11.1955 11.1955 13.1667 8.66667 13.1667C6.13783 13.1667 4.16667 11.1955 4.16667 8.66667Z" fill="white"/>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -83,6 +46,7 @@
             <div class="ltr:ml-auto rtl:ml-0">
                 <div class="flex items-end rev {{ isset($header['main']['show_searchbar']) && $header['main']['show_searchbar'] == 1 ? 'justify-end' : 'ml-2' }}">
                     <ul class="flex -mt-1.5 ltr:relative">
+
                         {{-- Account Icon: beside wishlist --}}
                         <style>
                             #header-account-guest-btn,

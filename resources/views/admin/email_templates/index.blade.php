@@ -34,6 +34,6 @@
         var pdf = 0;
         var csv = 0;
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/templates.min.js?v=3.1') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/templates.min.js?v=3.1') }}"></script>
 @endsection

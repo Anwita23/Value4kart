@@ -16,8 +16,8 @@ class BrandDetailResource extends JsonResource
     {
         $pictureURL  = public_path('dist/img/default-image.png');
         $pictureName = 'default-image.png';
-        if (isset($this->image->file_name) && ! empty($this->image->file_name) && isFileExist('public/uploads/brand/' . $this->image->file_name)) {
-            $pictureURL  = \Storage::disk()->url('public/uploads/brand/' . $this->image->file_name);
+        if (isset($this->image->file_name) && ! empty($this->image->file_name) && isFileExist('uploads/brand/' . $this->image->file_name)) {
+            $pictureURL  = \Storage::disk()->asset('uploads/brand/' . $this->image->file_name);
             $pictureName = $this->image->file_name;
         }
 

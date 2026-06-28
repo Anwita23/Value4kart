@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     @yield('pdf-title')
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/dist/css/pdf/list_pdf.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/pdf/list_pdf.min.css') }}">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                                 @endphp
                                 @if(!empty($company_logo))
                                     @if(Storage::disk()->exists("public/uploads/companyPic/". $company_logo) == true)
-                                        <img src="{{ Storage::disk()->url('/') . '/public/uploads/companyPic/' . $company_logo }}" alt="{{ Storage::disk()->url('/') . 'public/uploads/companyPic/' . $company_logo }}" class="mt-1p5">
+                                        <img src="{{ Storage::disk()->url('/') . '/public/uploads/companyPic/' . $company_logo }}" alt="{{ Storage::disk()->url('/') . 'uploads/companyPic/' . $company_logo }}" class="mt-1p5">
                                     @endif
                                 @endif
                                 <div><span class="company-name">{{ preference('company_name') }}</span></div>

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Reviews'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -92,7 +92,7 @@
         var pdf = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\ReviewController@pdf')) ? '1' : '0' }}";
         var csv = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\ReviewController@csv')) ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/review.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/review.min.js') }}"></script>
 @endsection

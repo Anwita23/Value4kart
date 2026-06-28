@@ -21,16 +21,16 @@
 {{-- All the styles will be injected here --}}
 @section('parent-css')
     @yield('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
     @stack('styles')
 @endsection
 
 {{-- All the scripts will be injected here --}}
 @section('parent-js') 
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     
     @yield('js')
     
-    <script src="{{ asset('public/js/myaccount.min.js?v=5.0.0') }}"></script>
+    <script src="{{ asset('js/myaccount.min.js?v=5.0.0') }}"></script>
     @stack('scripts')
 @endsection

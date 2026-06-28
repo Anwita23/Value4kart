@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('all-image', function () {
-            return \Storage::disk()->allFiles('public/uploads');
+            return \Storage::disk()->allFiles('uploads');
         });
 
         $this->app->singleton('image-directories', function () {

@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Create :x', ['x' => __('Customer')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/user-list.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/validation-error.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/validation-error.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -52,14 +52,14 @@
 @section('js')
     <script>
         'use strict';
-        var utilJs = "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}";
+        var utilJs = "{{ asset('dist/js/intl-tel-input/utils.min.js') }}";
         let oldCountry = "{!! old('country') ?? 'null' !!}";
         let oldState = "{!! old('state') ?? 'null' !!}";
         let oldCity = "{!! old('city') ?? 'null' !!}";
     </script>
 
-    <script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/customer.min.js') }}"></script> 
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/customer.min.js') }}"></script> 
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 @endsection

@@ -491,6 +491,532 @@ a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md img {
     overflow: visible !important;
 }
 
+/* Ensure nav-wrap and its parents don't clip dropdowns */
+#nav-wrap,
+#nav-wrap > div,
+.header > div,
+.header > div > div {
+    overflow: visible !important;
+}
+
+/* Fix profile image size in header */
+.md\\:hidden .h-9.w-9,
+.md\\:hidden img.h-9.w-9 {
+    width: 36px !important;
+    height: 36px !important;
+    max-width: 36px !important;
+    max-height: 36px !important;
+    object-fit: cover !important;
+}
+
+/* Fix profile dropdown positioning and z-index */
+#header-account-btn {
+    position: relative !important;
+    z-index: 60 !important;
+}
+
+/* Profile dropdown menu - ensure it appears above content */
+#header-account-btn + div {
+    z-index: 99999 !important;
+    position: absolute !important;
+}
+
+/* Profile image container - prevent overflow */
+#header-account-btn .relative {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Fix profile image positioning to prevent overlap */
+#header-account-btn img {
+    position: relative !important;
+    z-index: 60 !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+}
+
+/* Ensure header container doesn't clip profile */
+.header .flex.justify-end {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 60 !important;
+}
+
+/* Profile button container */
+#header-account-btn {
+    overflow: visible !important;
+}
+
+/* Constrain profile image within header bounds */
+.header .relative[x-data] {
+    position: relative !important;
+}
+
+/* Profile dropdown should appear above but not overlap when closed */
+.header .relative[x-data] > div[x-show] {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    z-index: 99999 !important;
+}
+
+/* Reduce profile image size to prevent overlap */
+#header-account-btn img.h-22 {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+}
+
+/* Profile button container - ensure proper spacing */
+#header-account_btn {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ensure header section properly contains all elements */
+section.sticky.top-0.z-40 {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 1000 !important;
+    max-height: none !important;
+}
+
+/* Ensure main content doesn't overlap header */
+main, .main-content, .content-wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+    margin-top: 0 !important;
+}
+
+/* Header layout wrapper - ensure it doesn't overflow */
+.layout-wrapper.px-4 {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Profile list item - ensure it stays within header */
+.header ul.flex li {
+    position: relative !important;
+    z-index: 60 !important;
+}
+
+/* Ensure header has proper height to contain profile */
+.header {
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    isolation: isolate !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+/* Override max-h-24 constraint on header section */
+section.sticky.top-0.z-40.max-h-24 {
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    z-index: 9999 !important;
+    position: relative !important;
+    isolation: isolate !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+}
+
+/* Ensure main content has proper margin to account for header */
+main, .main-content, .content-section {
+    margin-top: 90px !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Ensure header creates a new stacking context */
+section.sticky.top-0.z-40 {
+    transform: translateZ(0) !important;
+}
+
+/* Ensure main content has proper spacing from header */
+body {
+    padding-top: 0 !important;
+}
+
+/* Add spacing after header */
+.header + *, section.sticky.top-0.z-40 + * {
+    margin-top: 10px !important;
+}
+
+/* Ensure header content is properly contained */
+.header > div {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Ensure main content stays below header */
+main, .content-wrapper, .container, .layout-wrapper {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Add margin to main content to prevent overlap */
+main {
+    margin-top: 80px !important;
+}
+
+/* Ensure header background covers any overlap */
+section.sticky.top-0.z-40 {
+    background-color: #ffffff !important;
+    padding-bottom: 5px !important;
+}
+
+/* Profile container - ensure proper positioning */
+.header .relative[x-data] {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Profile image - ensure it doesn't extend beyond header */
+#header-account-btn img {
+    display: block !important;
+}
+
+/* Profile button - ensure proper containment */
+#header-account-btn {
+    position: relative !important;
+    display: block !important;
+}
+
+/* Profile flex container - ensure proper alignment */
+#header-account-btn .flex {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Profile image wrapper - constrain size */
+#header-account-btn .flex.justify-center {
+    width: 32px !important;
+    height: 32px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Profile image - specific targeting from blade file */
+#header-account-btn .h-22.w-22 {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    margin-top: 2px !important;
+}
+
+/* Profile slot icon container */
+#header-account-btn [slot="icon"] {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* Profile button padding adjustment */
+#header-account-btn.md\:px-2.lg\:px-0 {
+    padding: 8px 0 !important;
+}
+
+/* Profile list item - ensure proper spacing */
+.header ul.flex li.hidden.md\:block.ml-5 {
+    position: relative !important;
+    z-index: 60 !important;
+    margin-left: 20px !important;
+}
+
+/* Aggressive profile containment */
+.header ul.flex li {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Profile flex col container */
+.header ul.flex li .flex.flex-col {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Profile image - ensure it stays within bounds */
+#header-account-btn img {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+}
+
+/* Profile image - reduce size to prevent overlap */
+#header-account-btn img.rounded-full {
+    width: 12px !important;
+    height: 12px !important;
+    max-width: 12px !important;
+    max-height: 12px !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
+}
+
+/* Target specific profile image classes from blade file */
+img.h-22.w-22.mt-0\.5.rounded-full.object-cover {
+    width: 12px !important;
+    height: 12px !important;
+    max-width: 12px !important;
+    max-height: 12px !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Profile image wrapper - strict containment */
+#header-account-btn .flex.justify-center {
+    width: 14px !important;
+    height: 14px !important;
+    max-width: 14px !important;
+    max-height: 14px !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+    overflow: hidden !important;
+    position: static !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Profile image - ensure it fits within wrapper */
+#header-account-btn img {
+    width: 12px !important;
+    height: 12px !important;
+    max-width: 12px !important;
+    max-height: 12px !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* Profile button - reduce padding */
+#header-account-btn {
+    padding: 2px 0 !important;
+    position: static !important;
+    margin: 0 !important;
+    height: auto !important;
+    display: inline-block !important;
+}
+
+/* Profile label text - reduce font size */
+#header-account-btn p {
+    font-size: 9px !important;
+    line-height: 1 !important;
+    margin-top: 1px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+/* Profile button flex container */
+#header-account-btn .flex.justify-center {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 16px !important;
+    width: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Profile container - static positioning */
+.header .relative[x-data] {
+    position: static !important;
+}
+
+/* Profile dropdown - absolute positioning only when open */
+.header .relative[x-data] > div[x-show] {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Target specific dropdown classes from blade file */
+.absolute.ltr\\:right-0.rtl\\:left-0.top-full.mt-2.w-48.bg-white.border.border-gray-100.rounded-lg.shadow-xl.z-50.py-1.origin-top-right {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Target dropdown with style attribute */
+.header .relative[x-data] > div[style*="display: none"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Profile dropdown - show only when Alpine.js sets it to visible */
+.header .relative[x-data] > div[x-show][style*="display: block"],
+.header .relative[x-data] > div[x-show].block {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+}
+
+/* Force hide all dropdowns by default */
+.header .relative[x-data] > div {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Only show when explicitly marked as visible */
+.header .relative[x-data] > div[x-show].block,
+.header .relative[x-data] > div[x-show][style*="display: block"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Profile container - ensure it doesn't expand */
+.header .relative[x-data] {
+    position: relative !important;
+    display: inline-block !important;
+    vertical-align: top !important;
+    height: 30px !important;
+    max-height: 30px !important;
+    width: auto !important;
+    overflow: visible !important;
+}
+
+/* Profile dropdown - position outside container */
+.header .relative[x-data] > div[x-show] {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    z-index: -1 !important;
+}
+
+/* Force hide any dropdown with style display none */
+.header .relative[x-data] > div[style*="display: none"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Ensure header has enough height */
+.header {
+    height: auto !important;
+    min-height: 70px !important;
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    overflow: visible !important;
+}
+
+/* Header section - ensure proper height */
+section.sticky.top-0.z-40 {
+    height: auto !important;
+    min-height: 70px !important;
+    overflow: visible !important;
+}
+
+/* Layout wrapper - ensure proper spacing */
+.layout-wrapper.px-4 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Profile list item - ensure it doesn't extend */
+.header ul.flex li.hidden.md\:block.ml-5 {
+    height: 45px !important;
+    max-height: 45px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    vertical-align: middle !important;
+}
+
+/* Profile flex col - strict height constraint */
+.header ul.flex li .flex.flex-col.justify-center.items-center {
+    height: 35px !important;
+    max-height: 35px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Profile slot icon - strict height constraint */
+.header ul.flex li [slot="icon"] {
+    height: 30px !important;
+    max-height: 30px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Profile image - ensure proper sizing */
+#header-account-btn img {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
 /* ----------------------------------------------------------
    2. CATEGORY BAR — pure white bar BELOW the blue navbar
       Flipkart style: icon on top, label below, blue underline on hover
@@ -538,6 +1064,139 @@ a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md img {
 /* Inner accordion wrapper → horizontal scroll container */
 .category-menu-wrapper .accordion-homepage-wrapper {
     overflow: visible !important;
+}
+
+/* ============================================================
+   NEW HEADER SEARCH BAR — Location + Search Input Component
+   ============================================================ */
+
+.new-header-search-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    height: 48px;
+    width: 100%;
+    min-width: 0;
+}
+
+/* Location Section */
+.new-header-location {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    padding: 0 16px;
+    background: #f5f5f5;
+    height: 100%;
+    border-right: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    min-width: 160px;
+    flex-shrink: 0;
+}
+
+.new-header-location:hover {
+    background: #ebebeb;
+}
+
+.location-icon {
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.location-text {
+    color: #1a56db;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.dropdown-arrow {
+    flex-shrink: 0;
+}
+
+/* Search Input Section */
+.new-header-search-input-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    position: relative;
+    min-width: 0;
+}
+
+.new-header-search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #2c2c2c;
+    background: transparent;
+    min-width: 0;
+}
+
+.new-header-search-input::placeholder {
+    color: #a0a0a0;
+}
+
+.new-header-search-input:focus {
+    outline: none;
+}
+
+/* Search Button */
+.new-header-search-button {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 100%;
+    background: #FCCA19;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.new-header-search-button:hover {
+    background: #e5b815;
+}
+
+.new-header-search-button:active {
+    background: #d4a812;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .new-header-search-bar {
+        height: 44px;
+    }
+
+    .new-header-location {
+        min-width: 120px;
+        padding: 0 12px;
+    }
+
+    .location-text {
+        font-size: 13px;
+    }
+
+    .new-header-search-input {
+        font-size: 13px;
+        padding: 0 12px;
+    }
+
+    .new-header-search-button {
+        width: 44px;
+    }
 }
 
 .category-menu-wrapper .accordion-homepage-wrapper .menu-full-details {
@@ -728,12 +1387,7 @@ ul.header-menu-nav {
     position: absolute !important;
     top: calc(100% + 4px) !important;
     left: 50% !important;
-    transform: translateX(-50%) scaleY(0) !important;
-    transform-origin: top center !important;
-    transition: transform 0.18s ease, opacity 0.18s ease !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-
+    transform: translateX(-50%) !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -749,12 +1403,18 @@ ul.header-menu-nav {
     border: none !important;
     list-style: none !important;
     margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
 }
 
-.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown {
+/* Ensure horizontal-dropdown also shows on hover */
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown.horizontal-dropdown {
     transform: translateX(-50%) scaleY(1) !important;
     opacity: 1 !important;
     pointer-events: all !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li {
@@ -910,7 +1570,6 @@ section.sticky,
     color: #1a56db;
     font-weight: 600;
 }
-}
 
 /* Active (clicked) category tile — persistent blue underline + label color */
 .flipkart-cat-item.fk-active {
@@ -1034,7 +1693,7 @@ section.sticky,
    BANNER — one slide at a time, image fills its set height
    ============================================================ */
 .slideshow-container {
-    height: auto !important;
+    height: 500px !important;
     overflow: hidden !important;
 }
 
@@ -1046,8 +1705,7 @@ section.sticky,
 .custom-swiper-full .other-slider-images {
     display: block !important;
     width: 100% !important;
-    height: var(--slider-height, auto) !important;
-    max-height: none !important;
+    height: 500px !important;
     object-fit: cover !important;
     object-position: center center !important;
 }
@@ -1259,7 +1917,7 @@ ul.header-menu-nav.custom-border::-webkit-scrollbar {
 
 /* Override to make first-dropdown horizontal for Pages */
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown {
-    display: flex !important;
+    display: none !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     min-width: unset !important;
@@ -1267,6 +1925,17 @@ ul.header-menu-nav.custom-border::-webkit-scrollbar {
     width: max-content !important;
     border-radius: 4px !important;
     padding: 0 4px !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown.horizontal-dropdown {
+    display: flex !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li {

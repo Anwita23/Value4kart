@@ -486,9 +486,26 @@ a.relative.h-36.md\:h-80.md\:w-1\/4.border.rounded-md img {
    1. Navbar (.header) — blue bar, no overflow clipping
    ---------------------------------------------------------- */
 .header {
-    position: relative !important;
-    z-index: 50 !important;
+  
     overflow: visible !important;
+}
+
+/* Ensure nav-wrap and its parents don't clip dropdowns */
+#nav-wrap,
+#nav-wrap > div,
+.header > div,
+.header > div > div {
+    overflow: visible !important;
+}
+
+/* Fix profile image size in header */
+.md\\:hidden .h-9.w-9,
+.md\\:hidden img.h-9.w-9 {
+    width: 36px !important;
+    height: 36px !important;
+    max-width: 36px !important;
+    max-height: 36px !important;
+    object-fit: cover !important;
 }
 
 /* ----------------------------------------------------------
@@ -728,12 +745,7 @@ ul.header-menu-nav {
     position: absolute !important;
     top: calc(100% + 4px) !important;
     left: 50% !important;
-    transform: translateX(-50%) scaleY(0) !important;
-    transform-origin: top center !important;
-    transition: transform 0.18s ease, opacity 0.18s ease !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-
+    transform: translateX(-50%) !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
@@ -749,12 +761,18 @@ ul.header-menu-nav {
     border: none !important;
     list-style: none !important;
     margin: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
 }
 
-.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown {
+/* Ensure horizontal-dropdown also shows on hover */
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown.horizontal-dropdown {
     transform: translateX(-50%) scaleY(1) !important;
     opacity: 1 !important;
     pointer-events: all !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown > li {
@@ -815,8 +833,7 @@ section.sticky,
 .flipkart-category-bar {
     background: #ffffff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    position: relative;
-    z-index: 9990;
+   
     overflow: visible !important;
 }
 
@@ -1034,7 +1051,7 @@ section.sticky,
    BANNER — one slide at a time, image fills its set height
    ============================================================ */
 .slideshow-container {
-    height: auto !important;
+    height: 500px !important;
     overflow: hidden !important;
 }
 
@@ -1046,8 +1063,7 @@ section.sticky,
 .custom-swiper-full .other-slider-images {
     display: block !important;
     width: 100% !important;
-    height: var(--slider-height, auto) !important;
-    max-height: none !important;
+    height: 500px !important;
     object-fit: cover !important;
     object-position: center center !important;
 }
@@ -1259,7 +1275,7 @@ ul.header-menu-nav.custom-border::-webkit-scrollbar {
 
 /* Override to make first-dropdown horizontal for Pages */
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown {
-    display: flex !important;
+    display: none !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     min-width: unset !important;
@@ -1267,6 +1283,17 @@ ul.header-menu-nav.custom-border::-webkit-scrollbar {
     width: max-content !important;
     border-radius: 4px !important;
     padding: 0 4px !important;
+    z-index: 9999 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.header-menu-nav > li.first-dropdown-li:hover > ul.first-dropdown.horizontal-dropdown {
+    display: flex !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .header-menu-nav > li.first-dropdown-li > ul.first-dropdown.horizontal-dropdown > li {

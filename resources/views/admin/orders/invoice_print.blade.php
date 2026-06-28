@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>{{ __('Invoice') }}</title>
-    <link rel="stylesheet" href="{{ asset('public/bootstrap/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/pdf-invoice.min.css?v=5.0.1') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/pdf-invoice.min.css?v=5.0.1') }}">
 </head>
 
 <body>
@@ -484,7 +484,7 @@
         </div>
     </div>
     @if ($type == 'print')
-        <script src="{{ asset('public/dist/js/custom/site/order-invoice.min.js?v=4.2') }}"></script>
+        <script src="{{ asset('dist/js/custom/site/order-invoice.min.js?v=4.2') }}"></script>
     @endif
 </body>
 

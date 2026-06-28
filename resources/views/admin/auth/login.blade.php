@@ -3,7 +3,7 @@
 @section('content')
 <div class="auth-wrapper flex items-center justify-center min-h-screen bg-transparent">
     <div class="cart-icon-wrapper text-center">
-        <img src="{{ asset('public/frontend/assets/img/coupon/cart.svg') }}" alt="Cart" class="cart-icon wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s" style="width: 100px; height: 100px;">
+        <img src="{{ asset('frontend/assets/img/coupon/cart.svg') }}" alt="Cart" class="cart-icon wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s" style="width: 100px; height: 100px;">
     </div>
     <div class="auth-form-wrapper mx-4 glass-card">
         <form action="{{ route('login.post') }}" method="post" id="admin-login-form" class="enhanced-login-form">

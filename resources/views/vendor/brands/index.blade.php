@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Brands'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -40,6 +40,6 @@
         var csv = "{{ auth()->user()?->hasPermission('App\Http\Controllers\Vendor\BrandController@csv') ? '1' : '0' }}";
         var ADMIN_SITE_URL = "{{ URL::to('/vendor') }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/brand.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/brand.min.js') }}"></script>
 @endsection

@@ -137,7 +137,7 @@ class EmailController extends Controller
             }
         }
 
-        \Storage::disk()->delete('public/uploads/invoices/' . $invoiceName);
+        \Storage::disk()->delete('uploads/invoices/' . $invoiceName);
 
         return $this->response;
     }

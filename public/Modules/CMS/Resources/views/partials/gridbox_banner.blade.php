@@ -5,7 +5,7 @@
     <div class="relative h-[300px] md:h-full w-full md:flex-grow">
         @isset($banner->image)
             <img class="w-full h-full object-cover rounded-md"
-                src="{{ Storage::disk()->url('public/uploads') . DIRECTORY_SEPARATOR . $banner->image }}" alt="{{ __('Image') }}">
+                src="{{ asset('uploads') . DIRECTORY_SEPARATOR . $banner->image }}" alt="{{ __('Image') }}">
         @endisset
         <div class="absolute top-0 p-6">
             @if ($banner->u_subtitle)

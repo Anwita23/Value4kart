@@ -23,8 +23,8 @@ class VendorDetailResource extends JsonResource
     {
         $pictureURL  = public_path('dist/img/default-image.png');
         $pictureName = 'default-image.png';
-        if (isset($this->avatarFile->file_name) && ! empty($this->avatarFile->file_name) && isFileExist('public/uploads/vendor/' . $this->avatarFile->file_name)) {
-            $pictureURL  = \Storage::disk()->url('public/uploads/vendor/' . $this->avatarFile->file_name);
+        if (isset($this->avatarFile->file_name) && ! empty($this->avatarFile->file_name) && isFileExist('uploads/vendor/' . $this->avatarFile->file_name)) {
+            $pictureURL  = \Storage::disk()->asset('uploads/vendor/' . $this->avatarFile->file_name);
             $pictureName = $this->avatarFile->file_name;
         }
 

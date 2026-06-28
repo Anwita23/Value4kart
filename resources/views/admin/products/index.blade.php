@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Products'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -83,6 +83,6 @@
         var categoryUrl = '{{ route('find.categories.ajax') }}';
         var vendorUrl = '{{ route('find.vendors.ajax') }}';
     </script>
-    <script src="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/product_list.min.js?v=3.3') }}"></script>
+    <script src="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/product_list.min.js?v=3.3') }}"></script>
 @endsection

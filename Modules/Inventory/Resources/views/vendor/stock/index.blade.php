@@ -38,6 +38,6 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('public/datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('Modules/Inventory/Resources/assets/js/adjust.min.js') }}"></script>
 @endsection

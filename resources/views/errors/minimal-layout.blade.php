@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('public/css/app.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/css/tailwind-custom.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tailwind-custom.min.css') }} ">
 </head>
 <body>
     <div class="ml-10 mr-5 xxs:mx-auto lg:mx-4 xl:mx-32 2xl:mx-50 3xl:mx-354p">
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div>
-                <img class="lg:ml-53p mx-auto w-296p h-270p md:w-430p md:h-354p 3xl:w-556p 3xl:h-505p lg:mt-225p md:mt-120p mt-10" src="{{ asset('public/frontend/assets/img/error/error-page-image-one.svg') }}">
+                <img class="lg:ml-53p mx-auto w-296p h-270p md:w-430p md:h-354p 3xl:w-556p 3xl:h-505p lg:mt-225p md:mt-120p mt-10" src="{{ asset('frontend/assets/img/error/error-page-image-one.svg') }}">
             </div>
         </div>
     </div>

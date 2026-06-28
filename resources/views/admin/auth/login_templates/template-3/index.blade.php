@@ -7,7 +7,7 @@
             --bg-image: url({{ url('resources/views/admin/auth/login_templates/template-3/' . $settings['template-3']['data']['file']) }})
         }
     </style>
-    <link rel="stylesheet" href="{{ asset('public/datta-able/css/layouts/dark.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/css/layouts/dark.min.css') }}">
 @endsection
 @section('content')
     @php

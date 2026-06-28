@@ -1,7 +1,7 @@
 @extends('admin.auth.login_templates.' . (isset($template) ? $template : preference('auth_template_name', 'template-1')) . '.index')
 
 @section('sub-content')
-<link rel="stylesheet" href="{{ asset('public/dist/css/admin-login.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/admin-login.css') }}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <div class="al-page">
@@ -16,7 +16,7 @@
                 <p class="al-left__sub">Manage your {{ preference('company_name') }} store with ease. Access orders, products, customers and settings from one place.</p>
             </div>
             <div class="al-left__illustration">
-                <img src="{{ asset('public/dist/images/login-illustration.png') }}" alt="E-commerce illustration">
+                <img src="{{ asset('dist/images/login-illustration.png') }}" alt="E-commerce illustration">
             </div>
         </div>
     </div>

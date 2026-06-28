@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Orders'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/vendor-responsiveness.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/vendor-responsiveness.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -82,8 +82,8 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script type="text/javascript">
         'use strict';
         var pdf = "{{ (auth()->user()?->hasPermission('App\Http\Controllers\Vendor\OrderController@pdf')) ? '1' : '0' }}";
@@ -95,8 +95,8 @@
         var vendor_id = "{{ auth()->user()->vendor()->vendor_id }}";
         var from = 'web';
     </script>
-    <script src="{{ asset('public/dist/js/custom/order.min.js?v=4.2') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/order.min.js?v=4.2') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
     @if(isActive('BulkPayment') && isset($accessBulk) && in_array($vendorRoleId, $accessBulk))
         <script>
             var countBulkPayment = '{{ preference('bulk_pay_count') }}';

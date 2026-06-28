@@ -1,7 +1,7 @@
 @extends('admin.auth.login_templates.' . (isset($template) ? $template : preference('auth_template_name', 'template-1')) . '.index')
 
 @section('sub-content')
-<link rel="stylesheet" href="{{ asset('public/dist/css/auth/enhanced-auth-forms.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/auth/enhanced-auth-forms.min.css') }}">
 <form method="GET" action="{{ route('password.reset', ['token' => 'tokens']) }}" class="admin-login-con my-0 enhanced-login-form" id="admin-otp-form">
     @csrf
 
@@ -90,6 +90,6 @@
     </div>
 </form>
 
-<script src="{{ asset('public/dist/js/custom/auth/enhanced-auth-forms.min.js?v=1.1.0') }}"></script>
+<script src="{{ asset('dist/js/custom/auth/enhanced-auth-forms.min.js?v=1.1.0') }}"></script>
 
 @endsection

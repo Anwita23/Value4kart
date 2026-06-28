@@ -39,7 +39,7 @@ class UserInvoiceMailService extends TechVillageMail
         }
 
         // Send pdf with mail
-        createDirectory('public/uploads/invoices');
+        createDirectory('uploads/invoices');
         $invoiceName = $request->reference . '.pdf';
         (new Order())->invoicePdfEmail($request, $invoiceName);
 

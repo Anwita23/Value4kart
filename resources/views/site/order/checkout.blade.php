@@ -1,6 +1,9 @@
 @extends('../site/layouts.app')
 @section('page_title', __('Check Out'))
 @section('css')
+<<<<<<< HEAD
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
+=======
     <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
     <style>
         /* Modern Minimalist Checkout Redesign */
@@ -213,6 +216,7 @@
             }
         }
     </style>
+>>>>>>> 0d8dcd52b8e9d5eaf92b62191833f94b0170124f
 @endsection
 @section('content')
     <section class="layout-wrapper px-4 xl:px-0 mt-70p mb-20">
@@ -976,8 +980,8 @@
         var equivalentSymbol = "{{ $multicurrencyData['symbol'] }}";
         var equivalentExchangeRate = "{{ $multicurrencyData['exchange_rate'] }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/jquery.blockUI.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/checkout.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/checkout.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('/public/dist/js/custom/site/address.min.js') }}"></script>
 @endsection

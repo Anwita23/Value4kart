@@ -14,20 +14,20 @@
     @if(!empty($favicon))
         <link rel='shortcut icon' href="{{ $favicon }}" type='image/x-icon' />
     @endif
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/animation/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/animation/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
     @if(file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+        <script src="{{ asset('js/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">const translates = {}</script>
     @endif
-    <link rel="stylesheet" href="{{ asset('public/datta-able/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/feather/css/feather.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/datta/datta-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/login.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/feather/css/feather.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/datta/datta-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/login.min.css') }}">
     @yield('css')
     <script type="text/javascript">
         'use strict';
@@ -52,16 +52,16 @@
         @include('partials.phone-input-config')
  </script>
     
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
     <script src="{{ asset('Modules/SaaS/Resources/assets/js/jquery.slick.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/js/vendor-all.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/js/pcoded.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js?v=5.0.0') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/login.min.js?v=4.2.0')}}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/be-seller.min.js')}}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datta-able/js/vendor-all.min.js') }}"></script>
+    <script src="{{ asset('datta-able/js/pcoded.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/set-dial-code.min.js?v=5.0.0') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/login.min.js?v=4.2.0')}}"></script>
+    <script src="{{ asset('dist/js/custom/site/be-seller.min.js')}}"></script>
     @yield('js')
 
 </body>

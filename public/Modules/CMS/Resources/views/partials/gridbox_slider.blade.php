@@ -10,7 +10,7 @@
             <div class="relative h-[300px] md:h-full w-full builder_slider fade md:flex-grow">
                 @isset($slide->image)
                     <img class="w-full h-full object-cover rounded-md"
-                        src="{{ Storage::disk()->url('public/uploads') . DIRECTORY_SEPARATOR . $slide->image }}">
+                        src="{{ asset('uploads') . DIRECTORY_SEPARATOR . $slide->image }}">
                 @endisset
                 <div class="absolute bottom-0 p-6">
                     @if ($slide->u_subtitle)

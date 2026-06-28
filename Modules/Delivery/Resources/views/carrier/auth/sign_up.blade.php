@@ -17,7 +17,7 @@
 @endphp
     <!-- component -->
     <div class="bg-gray-23 lg:bg-cover bg-center">
-        <span><img class="3xl:h-full h-36" src="{{ asset('public/frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
+        <span><img class="3xl:h-full h-36" src="{{ asset('frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
     </div>
     <div class="3xl:mx-470p 2xl:mx-64 xl:mx-32 md:mx-20 mx-5 mb-70p 3xl:-mt-132p -mt-28 relative border border-gray-2 bg-white rounded-lg">
         <p class="lg:mt-12 mt-6 text-gray-10 lg:text-lg text-xs dm-sans font-medium text-center">
